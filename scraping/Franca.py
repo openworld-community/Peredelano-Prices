@@ -2,7 +2,7 @@ from flask import Flask
 from bs4 import BeautifulSoup
 import requests
 
-def scraping(urlFranca):
+def scraping(urlFranca, collection_name):
 
     r_Franca = requests.get(urlFranca)
     # print(r_Franca.status_code)
@@ -63,6 +63,14 @@ def scraping(urlFranca):
             counter = counter + 1
             content_nameTOBD = prod_tile_Name.text
             content_priceTOBD = prod_tile_Price.text
+
+            tempItem = {
+                "id": counter,
+                "name": content_nameTOBD,
+                "price" : content_priceTOBD
+            }
+            collection_name.insert_one(tempItem)
+
             # print(content_name)
             # print(content_price)
             # print("\n\n")
