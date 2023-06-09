@@ -65,9 +65,9 @@ def scraping(urlFranca, collection_name):
             content_priceTOBD = prod_tile_Price.text
 
             tempItem = {
-                "id": counter,
+                "counter": counter,
                 "name": content_nameTOBD,
-                "price" : content_priceTOBD
+                "price": content_priceTOBD
             }
             collection_name.insert_one(tempItem)
 

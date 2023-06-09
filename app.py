@@ -1,7 +1,7 @@
-from flask import Flask
+from flask import Flask, render_template, jsonify
 from bs4 import BeautifulSoup
 import requests
-from scraping import Franca
+from scraping import Franca, Voli, Aroma
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 def get_database():
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "enter your credentials"
+    CONNECTION_STRING = "mongodb+srv://aurum447mne:notforgetthisOne_885@formvppricesclaster.2yittu7.mongodb.net/?retryWrites=true&w=majority"
 
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     client = MongoClient(CONNECTION_STRING)
@@ -22,16 +22,17 @@ def get_database():
 def hello_world():  # put application's code here
 
     dbname = get_database()
-    collection_name = dbname["fromFranca"]
+    collection_name_Franca = dbname["fromFranca"]
+    collection_name_Voli = dbname["fromVoli"]
+    collection_name_Aroma = dbname["fromAroma"]
 
-    # testItem = {
-    #     "_id" : "999",
-    #     "item_name" : "test_name"
-    # }
-    # collection_name.insert_one(testItem)
-
-    toRet = Franca.scraping("https://glovoapp.com/me/sr/podgorica/franca-supermarket/", collection_name)
-    return "Hello world! Counter = " + str(toRet)
+    toRetVoli = Voli.scraping("https://glovoapp.com/me/sr/podgorica/voli1/", collection_name_Voli)
+    toRetFranca = Franca.scraping("https://glovoapp.com/me/sr/podgorica/franca-supermarket/", collection_name_Franca)
+    toRetAroma = Aroma.scraping("https://glovoapp.com/me/sr/podgorica/aroma-cetinjska-pdg/", collection_name_Aroma)
+    return "Hello world! CounterVoli = " + str(toRetVoli) \
+        + " CounterFranca = " + str(toRetFranca) \
+        + " CounterAroma = " + str(toRetAroma)
+    #return render_template("index.html")
 
 
 if __name__ == '__main__':
