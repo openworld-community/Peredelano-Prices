@@ -25,7 +25,7 @@ def scraping(urlVoli, collection_name):
         temp1 = temp.find('div', 'carousel__title-container')
         temp2 = temp1.find('h2', 'carousel__title')
 
-        if "Mesara i ribara" in temp2:
+        if "Mesara" in temp2:
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
             list_VoliCategory_urls[0][0] = temp3
@@ -35,7 +35,7 @@ def scraping(urlVoli, collection_name):
             temp3 = "https://glovoapp.com" + temp1.get('href')
             list_VoliCategory_urls[1][0] = temp3
 
-        if "Voće i povrće" in temp2:
+        if "Voće" in temp2:
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
             list_VoliCategory_urls[2][0] = temp3
