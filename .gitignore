@@ -1,3 +1,7 @@
+data
+/data/*
+venv
+/venv/*
 ### IntelliJ IDEA ###
 # Default ignored files
 /shelf/

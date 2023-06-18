@@ -1,3 +1,4 @@
+import os
 import re
 
 from flask import Flask, render_template, jsonify
@@ -14,7 +15,7 @@ app = Flask(__name__)
 
 def get_database():
     # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = "mongodb+srv://@formvppricesclaster.2yittu7.mongodb.net/?retryWrites=true&w=majority"
+    CONNECTION_STRING = os.getenv('MONGO_CONN_STR', "mongodb://user:pass@localhost/?retryWrites=true&w=majority")
 
     # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
     client = MongoClient(CONNECTION_STRING)
