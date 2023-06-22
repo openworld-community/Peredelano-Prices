@@ -56,6 +56,18 @@ def hello_world():  # put application's code here
     return "HelloWorld"
 
 
+@app.route('/drop-all/')
+def drop_all():
+    dbname = get_database()
+    collection_name_Franca = dbname["fromFranca"]
+    collection_name_Voli = dbname["fromVoli"]
+    collection_name_Aroma = dbname["fromAroma"]
+
+    collection_name_Franca.drop()
+    collection_name_Voli.drop()
+    collection_name_Aroma.drop()
+    return "Dropped all collections"
+
 @app.route('/get_list/<milk>')
 def display_milk(milk):
 
