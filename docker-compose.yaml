@@ -1,5 +1,16 @@
 version: '3'
 services:
+  backend:
+    image: python:3.10.12
+    working_dir: /srv/backend
+    volumes:
+      - ./src:/srv/backend
+    entrypoint: sh -c "ls; cd /srv/backend && pip install -r requirements.txt && python app.py"
+    ports:
+      - "3000:5000"
+    networks:
+      - mongo-net
+
   mongodb:
     image: mongodb/mongodb-community-server:6.0-ubi8
     environment:
