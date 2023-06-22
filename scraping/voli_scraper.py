@@ -114,5 +114,5 @@ def scraping(url_voli, collection_name):
                 "subcategory": currentsubcategory.strip()
             }
             all_items.append(temp_item)
-        collection_name.insert_one(tempItem)
+        collection_name.insert_many(all_items)
     return counter

@@ -4,7 +4,7 @@ import re
 from flask import Flask, render_template, jsonify
 from bs4 import BeautifulSoup
 import requests
-from scraping import Franca, voli_scraper, Aroma, ah
+from scraping import Franca, voli_scraper, Aroma
 from search import grouping, searching, creatingRegex
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
