@@ -10,6 +10,14 @@ def get_soup_from_url(url: str):
     return BeautifulSoup(result.text, "html.parser").find('div', 'store__body__dynamic-content')
 
 
+def split_weight(describe):
+    weight = []
+    for word in range(len(describe)):
+        if describe[word] == 'l' or describe[word] == 'ml' or describe[word] == 'g':
+            weight = [describe[word - 1], describe[word]]
+    return weight
+
+
 def scraping(url_voli, collection_name):
     div_store_body = get_soup_from_url(url=url_voli)
     div_carousels = div_store_body.find_all('div', 'carousel')
@@ -17,10 +25,12 @@ def scraping(url_voli, collection_name):
     meat_category_url = ""
     milk_category_url = ""
     fruit_category_url = ""
+    farinaceous_category_url = ""
     list_voli_category_urls = [
         [meat_category_url, "meatCategory"],
         [milk_category_url, "milkCategory"],
-        [fruit_category_url, "fruitCategory"]
+        [fruit_category_url, "fruitCategory"],
+        [farinaceous_category_url, "farinaceousCategory"]
     ]
 
     for temp in div_carousels:
@@ -42,6 +52,11 @@ def scraping(url_voli, collection_name):
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
             list_voli_category_urls[2][0] = temp3
+
+        if "Pekara" in temp2:
+            temp1 = temp.find('a', 'carousel__link link')
+            temp3 = "https://glovoapp.com" + temp1.get('href')
+            list_voli_category_urls[3][0] = temp3
 
     list_voli_all_urls = []
 
@@ -78,7 +93,7 @@ def scraping(url_voli, collection_name):
         except:
             all_ok = False
 
-        if all_ok == False:
+        if all_ok is False:
             product_titles = store_content.find('div', 'tile')
 
         all_items = []
@@ -92,11 +107,12 @@ def scraping(url_voli, collection_name):
 
             temp_item = {
                 "_id": counter,
-                "product": {'name': temp_product.name.strip(), 'price': temp_product.price.strip()},
+                "product": {'name': temp_product.name.strip(),
+                            'price': temp_product.price.strip().split('\xa0'),
+                            'weight': split_weight(temp_product.name.strip().lower().split())},
                 "category": category.strip(),
                 "subcategory": currentsubcategory.strip()
             }
             all_items.append(temp_item)
-        collection_name.insert_many(all_items)
-
+        collection_name.insert_one(tempItem)
     return counter
