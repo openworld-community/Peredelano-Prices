@@ -4,7 +4,7 @@ import re
 from flask import Flask, render_template, jsonify
 from bs4 import BeautifulSoup
 import requests
-from scraping import Franca, Voli, Aroma
+from scraping import Franca, voli_scraper, Aroma, ah
 from search import grouping, searching, creatingRegex
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
@@ -31,7 +31,7 @@ def hello_world():  # put application's code here
     collection_name_Voli = dbname["fromVoli"]
     collection_name_Aroma = dbname["fromAroma"]
 
-    # toRetVoli = Voli.scraping("https://glovoapp.com/me/sr/podgorica/voli1/", collection_name_Voli)
+    # toRetVoli = voli_scraper.scraping("https://glovoapp.com/me/sr/podgorica/voli1/", collection_name_Voli)
     # toRetFranca = Franca.scraping("https://glovoapp.com/me/sr/podgorica/franca-supermarket/", collection_name_Franca)
     # toRetAroma = Aroma.scraping("https://glovoapp.com/me/sr/podgorica/aroma-cetinjska-pdg/", collection_name_Aroma)
 
