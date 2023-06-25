@@ -23,6 +23,7 @@ def get_database():
     # Create the database for our example (we will use the same database throughout the tutorial
     return client['productsDB']
 
+
 @app.route('/')
 def hello_world():  # put application's code here
 
