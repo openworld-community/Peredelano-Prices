@@ -1,6 +1,7 @@
 data
 /data/*
 venv
+*/__pycache__
 /venv/*
 ### IntelliJ IDEA ###
 # Default ignored files

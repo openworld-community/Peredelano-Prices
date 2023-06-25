@@ -3,17 +3,17 @@ import requests
 from entities.ProductClass import Product
 
 
-def scraping(urlVoli, collection_name):
+def scraping(urlFranca, collection_name):
 
-    r_Voli = requests.get(urlVoli)
-    soup_Voli = BeautifulSoup(r_Voli.text, "html.parser")
-    divStoreBody = soup_Voli.find('div', 'store__body__dynamic-content')
+    r_Franca = requests.get(urlFranca)
+    soup_Franca = BeautifulSoup(r_Franca.text, "html.parser")
+    divStoreBody = soup_Franca.find('div', 'store__body__dynamic-content')
     divCarousels = divStoreBody.find_all('div', 'carousel')
 
     meatCategoryUrl = ""
     milkCategoryUrl = ""
     fruitCategoryUrl = ""
-    list_VoliCategory_urls = [
+    list_FrancaCategory_urls = [
         [meatCategoryUrl, "meatCategory"],
         [milkCategoryUrl, "milkCategory"],
         [fruitCategoryUrl, "fruitCategory"]
@@ -25,25 +25,25 @@ def scraping(urlVoli, collection_name):
         temp1 = temp.find('div', 'carousel__title-container')
         temp2 = temp1.find('h2', 'carousel__title')
 
-        if "Mesara" in temp2:
+        if "Meso i živina" in temp2:
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
-            list_VoliCategory_urls[0][0] = temp3
+            list_FrancaCategory_urls[0][0] = temp3
 
-        if "Mliječni proizvodi i jaja" in temp2:
+        if "Mliječni proizvodi " in temp2:
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
-            list_VoliCategory_urls[1][0] = temp3
+            list_FrancaCategory_urls[1][0] = temp3
 
-        if "Voće" in temp2:
+        if "Voće i povrće " in temp2:
             temp1 = temp.find('a', 'carousel__link link')
             temp3 = "https://glovoapp.com" + temp1.get('href')
-            list_VoliCategory_urls[2][0] = temp3
+            list_FrancaCategory_urls[2][0] = temp3
 
 
-    list_Voli_all_urls = list()
+    list_Franca_all_urls = list()
 
-    for temp_url in list_VoliCategory_urls:
+    for temp_url in list_FrancaCategory_urls:
 
         if(temp_url[0] == ""): continue
 
@@ -59,12 +59,12 @@ def scraping(urlVoli, collection_name):
             subcategory = forsubcategory.text
 
             # to each link chains the name of the category and subcategory
-            list_Voli_all_urls.append([Href, temp_url[1], subcategory])
+            list_Franca_all_urls.append([Href, temp_url[1], subcategory])
 
 
     counter = 0
 
-    for url in list_Voli_all_urls:
+    for url in list_Franca_all_urls:
 
         r_r = requests.get(url[0])
         category = url[1]
@@ -101,4 +101,4 @@ def scraping(urlVoli, collection_name):
             collection_name.insert_one(tempItem)
 
 
-    return (counter)
+    return(counter)
