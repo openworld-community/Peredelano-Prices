@@ -1,14 +1,8 @@
 import os
-import re
 
-from flask import Flask, render_template, jsonify
-from bs4 import BeautifulSoup
-import requests
-from scraping import Franca, voli_scraper, Aroma, glovo_scraper
-from search import grouping, searching, creatingRegex
+from flask import Flask
+from scraping import glovo_scraper
 from pymongo import MongoClient
-from pymongo.server_api import ServerApi
-import re
 
 app = Flask(__name__)
 
@@ -71,15 +65,6 @@ def hello_world():  # put application's code here
         categories_to_scrap_all
     )
 
-
-    # dbname = get_database()
-    # collection_name_Franca = dbname["fromFranca"]
-    # collection_name_Voli = dbname["fromVoli"]
-    # collection_name_Aroma = dbname["fromAroma"]
-
-    # toRetVoli = voli_scraper.scraping("https://glovoapp.com/me/sr/podgorica/voli1/", collection_name_Voli)
-    # toRetFranca = Franca.scraping("https://glovoapp.com/me/sr/podgorica/franca-supermarket/", collection_name_Franca)
-    # toRetAroma = Aroma.scraping("https://glovoapp.com/me/sr/podgorica/aroma-cetinjska-pdg/", collection_name_Aroma)
 
     return str(result_glovo)
 
