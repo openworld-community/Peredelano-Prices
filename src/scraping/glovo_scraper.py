@@ -34,6 +34,8 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
 
         list_category_urls = list()
 
+        list_all_urls = list()
+
         for category in categories_to_scrap:
             is_found = False
             for temp in div_carousels:
@@ -48,11 +50,31 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
             if not is_found:
                 problem = category + " is not found in " + market + "\n"
                 list_of_problems.append(problem)
-                #
-                # here try another tags
-                #
 
-        list_all_urls = list()
+                div_grid = div_store_body.find_all('div', 'grid')
+
+                for temp in div_grid:
+                    title_of_category = temp.find('h2', 'grid__title')
+                    for_search = str(title_of_category)
+                    if category in for_search:
+
+                        list_of_el_with_sub_categories = temp.find('div', 'grid__content')
+                        elements_sub_categories = list_of_el_with_sub_categories.findAll('div', 'tile')
+
+                        problem = "we found " + category + " in " + market + "\n"
+                        list_of_problems.append(problem)
+
+                        for tile in elements_sub_categories:
+                            for_href_and_title = tile.find('a')
+                            href = "https://glovoapp.com" + for_href_and_title.get('href')
+                            forsubcategory = tile.find('div', 'tile__description')
+                            subcategory = forsubcategory.text
+                            list_all_urls.append([href, subcategory])
+
+                            problem = "href = " + href + " subcategory = " + subcategory + "\n"
+                            list_of_problems.append(problem)
+
+
 
         for temp_url in list_category_urls:
             if not temp_url:

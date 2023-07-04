@@ -32,7 +32,7 @@ def scraping():
         'Franca':
             ["Meso i živina", "Mliječni proizvodi ", "Voće i povrće ", "Pekarski proizvodi"],
         'Voli':
-            ["Mesara", "Mliječni proizvodi i jaja", "Voće", "Pekara"]
+            ["Mesara i ribara", "Mliječni proizvodi i jaja", "Voće i povrće", "Pekara"]
     }
 
     urls_markets_glovo = {
