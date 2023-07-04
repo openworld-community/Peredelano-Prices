@@ -20,7 +20,12 @@ def get_database():
 
 @app.route('/')
 def hello_world():  # put application's code here
+    return "hello_world"
 
+
+
+@app.route('/scraping')
+def scraping():
     categories_to_scrap_all = {
         'Aroma':
             ["Mesne prerađevine", "Mlijeko, mliječni proizvodi i jaja", "Voće i povrće", "Hljeb, peciva i kolači"],
@@ -58,6 +63,8 @@ def hello_world():  # put application's code here
     ]
 
 
+
+
     result_glovo = glovo_scraper.scraping(
         markets,
         urls_markets_glovo,
@@ -67,6 +74,8 @@ def hello_world():  # put application's code here
 
 
     return str(result_glovo)
+
+
 
 
 @app.route('/drop-all/')

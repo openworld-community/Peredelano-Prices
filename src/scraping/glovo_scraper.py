@@ -1,5 +1,6 @@
-from bs4 import BeautifulSoup
 import requests
+from bs4 import BeautifulSoup
+
 from entities.ProductClass import Product
 
 
@@ -8,6 +9,7 @@ def get_soup_from_url(url: str):
         result = session.get(url)
 
     return BeautifulSoup(result.text, "html.parser").find('div', 'store__body__dynamic-content')
+
 
 def split_weight(describe):
     weight = []
@@ -18,9 +20,8 @@ def split_weight(describe):
 
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
-
     counter = 0
-
+    list_of_problems = list()
     # Aroma, Franca, Voli
     for market in markets:
 
@@ -31,20 +32,25 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
         div_store_body = get_soup_from_url(url=url)
         div_carousels = div_store_body.find_all('div', 'carousel')
 
-
         list_category_urls = list()
 
-        for temp in div_carousels:
-
-            temp1 = temp.find('div', 'carousel__title-container')
-            temp2 = temp1.find('h2', 'carousel__title')
-
-            for category in categories_to_scrap:
+        for category in categories_to_scrap:
+            is_found = False
+            for temp in div_carousels:
+                temp1 = temp.find('div', 'carousel__title-container')
+                temp2 = temp1.find('h2', 'carousel__title')
                 if category in temp2:
                     temp1 = temp.find('a', 'carousel__link link')
                     temp3 = "https://glovoapp.com" + temp1.get('href')
                     list_category_urls.append(temp3)
-
+                    is_found = True
+                    break
+            if not is_found:
+                problem = category + " is not found in " + market + "\n"
+                list_of_problems.append(problem)
+                #
+                # here try another tags
+                #
 
         list_all_urls = list()
 
@@ -102,8 +108,10 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     "subcategory": currentsubcategory.strip()
                 }
                 all_items.append(temp_item)
-
             collection_name.insert_many(all_items)
 
+    with open("file.txt", "w") as file:
+        for problem in list_of_problems:
+            file.write(problem + "\n        \n")
 
-    return counter
+    return str(counter)
