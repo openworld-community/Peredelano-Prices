@@ -35,7 +35,7 @@ def insert_to_db(collection_name, counter, product, sub_category, min_group):
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
     counter = 0
-    list_of_problems = list()
+    list_to_write = list()
     # Aroma, Franca, Voli
     for market in markets:
 
@@ -62,9 +62,6 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     is_found = True
                     break
             if not is_found:
-                problem = category + " is not found in " + market + "\n"
-                list_of_problems.append(problem)
-
                 div_grid = div_store_body.find_all('div', 'grid')
 
                 for temp in div_grid:
@@ -75,19 +72,12 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                         list_of_el_with_sub_categories = temp.find('div', 'grid__content')
                         elements_sub_categories = list_of_el_with_sub_categories.findAll('div', 'tile')
 
-                        problem = "we found " + category + " in " + market + "\n"
-                        list_of_problems.append(problem)
-
                         for tile in elements_sub_categories:
                             for_href_and_title = tile.find('a')
                             href = "https://glovoapp.com" + for_href_and_title.get('href')
                             forsubcategory = tile.find('div', 'tile__description')
                             subcategory = forsubcategory.text
                             list_all_urls.append([href, subcategory])
-
-                            problem = "href = " + href + " subcategory = " + subcategory + "\n"
-                            list_of_problems.append(problem)
-
 
 
         for temp_url in list_category_urls:
@@ -104,11 +94,8 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                 href = "https://glovoapp.com" + for_href.get('href')
                 forsubcategory = tile.find('div', 'tile__description')
                 subcategory = forsubcategory.text
-
-                # to each link chains the name of the category and subcategory
                 list_all_urls.append([href, subcategory])
 
-        # counter = 0
 
         for url in list_all_urls:
             currentsubcategory = url[1]
@@ -130,10 +117,8 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                 title = el.find('h2', 'grid__title')
                 grid_content = el.find('div', 'grid__content')
 
-                with open("file.txt", "w") as file:
-                    file.write(str(grid_content))
-
                 title_of_min_group = title.text
+                list_to_write.append(title_of_min_group.strip() + "\n")
 
                 products_in_grid_content = grid_content.find_all('div', 'tile')
 
@@ -147,18 +132,14 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     price = temp_price.find('span', 'product-price__effective product-price__effective--new-card')
                     price_to_db = price.text
 
-                    text ="name_to_db = \n" + name_to_db + "\nprice_to_db = \n" + str(price_to_db)
-                    list_of_problems.append(text + "\n\n\n")
-
                     product = Product(name_to_db, price_to_db)
                     counter += 1
 
                     insert_to_db(collection_name, counter, product, currentsubcategory, title_of_min_group)
 
 
-
-    # with open("file.txt", "w") as file:
-    #     for problem in list_of_problems:
-    #         file.write(problem + "\n        \n")
+    with open("file.txt", "w") as file:
+        for text in list_to_write:
+            file.write(text + "\n        \n")
 
     return str(counter)
