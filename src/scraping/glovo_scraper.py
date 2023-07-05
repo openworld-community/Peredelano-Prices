@@ -12,11 +12,25 @@ def get_soup_from_url(url: str):
 
 
 def split_weight(describe):
+    # 'weight': split_weight(temp_product.name.strip().lower().split())
     weight = []
     for word in range(len(describe)):
         if describe[word] == 'l' or describe[word] == 'ml' or describe[word] == 'g':
             weight = [describe[word - 1], describe[word]]
     return weight
+
+
+def insert_to_db(collection_name, counter, product, sub_category, min_group):
+    item = {
+            "_id": counter,
+            "product": {
+                'name': product.name.strip(),
+                'price': product.price.strip().split('\xa0')
+            },
+            "subcategory": sub_category.strip(),
+            "group": min_group.strip()
+        }
+    collection_name.insert_one(item)
 
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
@@ -98,42 +112,53 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
 
         for url in list_all_urls:
             currentsubcategory = url[1]
-            store_content = get_soup_from_url(url=url[0])
 
+            store_content = get_soup_from_url(url=url[0])
             all_ok = False
+            all_ok_grid = False
 
             try:
-                product_titles = store_content.find_all('div', 'tile')
-                all_ok = True
+                body_additional = store_content.find_all('div', 'grid')
+                all_ok_grid = True
             except:
-                all_ok = False
+                all_ok_grid = False
 
-            if all_ok is False:
-                product_titles = store_content.find('div', 'tile')
+            if all_ok_grid is False:
+                body_additional = store_content.find('div', 'grid')
 
-            all_items = []
-            for prod_tile in product_titles:
-                prod_tile_name = prod_tile.find('span', 'tile__description')
-                prod_tile_price = prod_tile.find('span', 'product-price__effective')
-                counter += 1
-                content_name_tobd = prod_tile_name.text
-                content_price_tobd = prod_tile_price.text
-                temp_product = Product(content_name_tobd, content_price_tobd)
+            for el in body_additional:
+                title = el.find('h2', 'grid__title')
+                grid_content = el.find('div', 'grid__content')
 
-                temp_item = {
-                    "_id": counter,
-                    "product": {
-                        'name': temp_product.name.strip(),
-                        'price': temp_product.price.strip().split('\xa0'),
-                        'weight': split_weight(temp_product.name.strip().lower().split())
-                    },
-                    "subcategory": currentsubcategory.strip()
-                }
-                all_items.append(temp_item)
-            collection_name.insert_many(all_items)
+                with open("file.txt", "w") as file:
+                    file.write(str(grid_content))
 
-    with open("file.txt", "w") as file:
-        for problem in list_of_problems:
-            file.write(problem + "\n        \n")
+                title_of_min_group = title.text
+
+                products_in_grid_content = grid_content.find_all('div', 'tile')
+
+                for tile in products_in_grid_content:
+                    temp_description = tile.find('span', 'tile__description')
+                    tile_title_el = temp_description.find('span')
+                    name = tile_title_el.get('text')
+                    name_to_db = str(name)
+
+                    temp_price = tile.find('div', 'tile__price')
+                    price = temp_price.find('span', 'product-price__effective product-price__effective--new-card')
+                    price_to_db = price.text
+
+                    text ="name_to_db = \n" + name_to_db + "\nprice_to_db = \n" + str(price_to_db)
+                    list_of_problems.append(text + "\n\n\n")
+
+                    product = Product(name_to_db, price_to_db)
+                    counter += 1
+
+                    insert_to_db(collection_name, counter, product, currentsubcategory, title_of_min_group)
+
+
+
+    # with open("file.txt", "w") as file:
+    #     for problem in list_of_problems:
+    #         file.write(problem + "\n        \n")
 
     return str(counter)
