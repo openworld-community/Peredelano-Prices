@@ -39,6 +39,8 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
     # Aroma, Franca, Voli
     for market in markets:
 
+        list_to_write.append("\n\n\nmarket: " + market + "\n")
+
         url = urls.get(market)
         collection_name = collections_names.get(market)
         categories_to_scrap = categories_to_scrap_dict.get(market)
@@ -100,6 +102,8 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
         for url in list_all_urls:
             currentsubcategory = url[1]
 
+            list_to_write.append("  " + "subcategory: " + currentsubcategory + "\n")
+
             store_content = get_soup_from_url(url=url[0])
             all_ok = False
             all_ok_grid = False
@@ -118,7 +122,7 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                 grid_content = el.find('div', 'grid__content')
 
                 title_of_min_group = title.text
-                list_to_write.append(title_of_min_group.strip() + "\n")
+                list_to_write.append("      "+title_of_min_group.strip() + "\n")
 
                 products_in_grid_content = grid_content.find_all('div', 'tile')
 
@@ -140,6 +144,6 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
 
     with open("file.txt", "w") as file:
         for text in list_to_write:
-            file.write(text + "\n        \n")
+            file.write(text)
 
     return str(counter)
