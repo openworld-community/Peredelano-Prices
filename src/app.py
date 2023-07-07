@@ -2,7 +2,9 @@ import os
 
 from flask import Flask
 from scraping import glovo_scraper
+from utils import from_db_to_file
 from pymongo import MongoClient
+import csv
 
 app = Flask(__name__)
 
@@ -225,22 +227,22 @@ def to_file():
         "Povrće", "Dehidrirano voće", "Orašasti plodovi & sjemenke"
     ]
 
-    list_to_write = list()
-
     dbname = get_database()
-    collection_name_Aroma = dbname["fromAroma"]
-    collection_name_Franca = dbname["fromFranca"]
-    collection_name_Voli = dbname["fromVoli"]
 
     # search from db
 
-    #
+    counter = from_db_to_file.to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_of_group_Voli, dbname)
 
-    with open("file.txt", "w") as file:
-        for text in list_to_write:
-            file.write(text)
 
-    return "all_ok"
+
+
+    # with open('data.csv', mode='w', newline='') as file:
+    #     writer = csv.writer(file)  # Создаем объект writer
+    #     for data in list_to_write:
+    #         writer.writerow(data)
+
+
+    return str(counter)
 
 
 @app.route('/scraping')
