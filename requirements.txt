@@ -1,4 +1,6 @@
 flask==2.3.2
-pymongo==4.3.3
+pymongo==4.4.0
 bs4==0.0.1
 requests==2.31.0
+beautifulsoup4~=4.12.2
+folium~=0.14.0

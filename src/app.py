@@ -1,7 +1,8 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 from scraping import glovo_scraper
+from geolocation.geoloc import open_map_with_markets
 from utils import from_db_to_file
 from pymongo import MongoClient
 import csv
@@ -23,6 +24,12 @@ def get_database():
 @app.route('/')
 def hello_world():  # put application's code here
     return "hello_world"
+
+
+@app.route('/map')
+def open_map():
+    open_map_with_markets()
+    return render_template("Podgorica_map.html")
 
 
 @app.route('/to-file')
@@ -229,18 +236,7 @@ def to_file():
 
     dbname = get_database()
 
-    # search from db
-
     counter = from_db_to_file.to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_of_group_Voli, dbname)
-
-
-
-
-    # with open('data.csv', mode='w', newline='') as file:
-    #     writer = csv.writer(file)  # Создаем объект writer
-    #     for data in list_to_write:
-    #         writer.writerow(data)
-
 
     return str(counter)
 
@@ -283,7 +279,6 @@ def scraping():
         'Aroma', 'Franca', 'Voli'
     ]
 
-
     result_glovo = glovo_scraper.scraping(
         markets,
         urls_markets_glovo,
@@ -305,7 +300,6 @@ def drop_all():
     collection_name_Voli.drop()
     collection_name_Aroma.drop()
     return "Dropped all collections"
-
 
 
 if __name__ == '__main__':
