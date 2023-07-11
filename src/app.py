@@ -2,10 +2,11 @@ import os
 
 from flask import Flask, render_template
 from scraping import glovo_scraper
-from geolocation.geoloc import open_map_with_markets
 from utils import from_db_to_file
 from pymongo import MongoClient
-import csv
+import folium
+from utils.map_events import add_handler_for_coords, add_handler_for_marker
+from utils.info import *
 
 app = Flask(__name__)
 
@@ -23,216 +24,34 @@ def get_database():
 
 @app.route('/')
 def hello_world():  # put application's code here
-    return "hello_world"
+
+    return render_template("start_page.html")
 
 
 @app.route('/map')
 def open_map():
-    open_map_with_markets()
+
+    map = folium.Map(location=[42.44510285, 19.258387751564968], zoom_start=14)
+
+    for coords in coords_of_Aroma_markets:
+        folium.Marker(location=coords, popup="Aroma", icon=folium.Icon(color='orange')).add_to(map)
+
+    for coords in coords_of_Franca_markets:
+        folium.Marker(location=coords, popup="Franca", icon=folium.Icon(color='red')).add_to(map)
+
+    for coords in coords_of_Voli_markets:
+        folium.Marker(location=coords, popup="Voli", icon=folium.Icon(color='green')).add_to(map)
+
+    add_handler_for_marker(map)
+    add_handler_for_coords(map)
+
+    map.save("templates/Podgorica_map.html")
+
     return render_template("Podgorica_map.html")
 
 
 @app.route('/to-file')
 def to_file():
-    tree_of_categories = {
-        'meat_category':
-            {
-                'pork':
-                    {
-                        'Aroma':
-                            ["empty"],
-                        'Franca':
-                            ["Svinjsko meso"],
-                        'Voli':
-                            ["Svinjetina"]
-                    },
-                'beef':
-                    {
-                        'Aroma':
-                            ["empty"],
-                        'Franca':
-                            ["Juneće meso"],
-                        'Voli':
-                            ["Junetina"]
-                    },
-                'chicken':
-                    {
-                        'Aroma':
-                            ["empty"],
-                        'Franca':
-                            ["Pileće meso"],
-                        'Voli':
-                            ["Piletina", "Piletina smrznuto", "Ćuretina smrznuto"]
-                    },
-                'veal':
-                    {
-                        'Aroma':
-                            ["empty"],
-                        'Franca':
-                            ["Teleće meso"],
-                        'Voli':
-                            ["Teletina"]
-                    },
-                'semi-finished products':
-                    {
-                        'Aroma':
-                            ["Suhomesnato slajs", "Mini salame, kobasice i virsle", "Pršut,čajna,budimska,suvi vrat,kulen"],
-                        'Franca':
-                            ["Delikates, mesne prerađevine"],
-                        'Voli':
-                            ["Roštilj"]
-                    }
-            },
-        'milk_category':
-            {
-                'milk':
-                    {
-                        'Aroma':
-                            ["Dugotrajno mlijeko", "Svjeze mlijeko"],
-                        'Franca':
-                            ["Mlijeko uht", "Mlijeko uht mala pakovanja", "Mlijeko svježe pasterizovano"],
-                        'Voli':
-                            ["Mlijeko"]
-                    },
-                'cheese':
-                    {
-                        'hard cheese':
-                            {
-                                'Aroma':
-                                    ["Tvrdi i polutvrdi sirevi"],
-                                'Franca':
-                                    ["empty"],
-                                'Voli':
-                                    ["Edamer , gauda emental", "Ostali delikatesni sirevi", "Koziji sir & ovčiji sir"]
-                            },
-                        'melted cheese':
-                            {
-                                'Aroma':
-                                    ["Namazni i topljeni sirevi"],
-                                'Franca':
-                                    ["empty"],
-                                'Voli':
-                                    ["Tost & topljeni sirevi"]
-                            }
-                    },
-                'jogurt':
-                    {
-                        'Aroma':
-                            ["Jogurt", "Voćni jogurt"],
-                        'Franca':
-                            ["Jogurt", "Jogurt voćni"],
-                        'Voli':
-                            ["Jogurt kefir i slično"]
-                    },
-                'maslac':
-                    {
-                        'Aroma':
-                            ["Maslac"],
-                        'Franca':
-                            ["Maslac"],
-                        'Voli':
-                            ["Maslac & margarin"]
-                    }
-            },
-        'pekara_category':
-            {
-                'bread':
-                    {
-                        'Aroma':
-                            ["Hljeb dnevni"],
-                        'Franca':
-                            ["empty"],
-                        'Voli':
-                            ["Hljeb"]
-                    },
-                'toast and packaged bread':
-                    {
-                        'Aroma':
-                            ["Pakovani hljeb", "Dvopek"],
-                        'Franca':
-                            ["Hljeb pakovani"],
-                        'Voli':
-                            ["Tost & dvopek hljeb"]
-                    },
-                'cakes and pastries':
-                    {
-                        'Aroma':
-                            ["Gotove torte I kolaci"],
-                        'Franca':
-                            ["Kolači industrijski suhi", "Kolači sveži pakovani", "Kolači sveži suhi"],
-                        'Voli':
-                            ["Gotove torte i kolači"]
-                    }
-            },
-        'fr_veg_nut_category':
-            {
-                'fruits':
-                    {
-                        'Aroma':
-                            ["Svježe voće"],
-                        'Franca':
-                            ["Voće"],
-                        'Voli':
-                            ["Voće"]
-                    },
-                'vegetables':
-                    {
-                        'Aroma':
-                            ["Svježe povrće"],
-                        'Franca':
-                            ["Povrće"],
-                        'Voli':
-                            ["Povrće"]
-                    },
-                'dried fruits':
-                    {
-                        'Aroma':
-                            ["Rinfuzno suvo grozdje", "Rinfuzno voće"],
-                        'Franca':
-                            ["empty"],
-                        'Voli':
-                            ["Dehidrirano voće"]
-                    },
-                'nuts':
-                    {
-                        'Aroma':
-                            ["Rinfuzni pistaci", "Rinfuzni badem", "Rinfuzni ljesnik", "Rinfuzni kikiriki", "Rinfuzni orah"],
-                        'Franca':
-                            ["empty"],
-                        'Voli':
-                            ["Orašasti plodovi & sjemenke"]
-                    }
-            }
-    }
-
-    list_of_group_Aroma = [
-        "Suhomesnato slajs", "Mini salame, kobasice i virsle",
-        "Pršut,čajna,budimska,suvi vrat,kulen",
-        "Dugotrajno mlijeko", "Svjeze mlijeko",
-        "Tvrdi i polutvrdi sirevi", "Namazni i topljeni sirevi",
-        "Jogurt", "Voćni jogurt", "Maslac", "Hljeb dnevni",
-        "Pakovani hljeb", "Dvopek", "Gotove torte I kolaci",
-        "Svježe voće", "Svježe povrće", "Rinfuzno suvo grozdje",
-        "Rinfuzno voće", "Rinfuzni pistaci", "Rinfuzni badem",
-        "Rinfuzni ljesnik", "Rinfuzni kikiriki", "Rinfuzni orah"
-    ]
-    list_of_group_Franca = [
-        "Svinjsko meso", "Juneće meso", "Pileće meso", "Teleće meso",
-        "Delikates, mesne prerađevine", "Mlijeko uht",
-        "Mlijeko uht mala pakovanja", "Mlijeko svježe pasterizovano",
-        "Jogurt", "Jogurt voćni", "Maslac", "Hljeb pakovani",
-        "Kolači industrijski suhi", "Kolači sveži pakovani",
-        "Kolači sveži suhi", "Voće", "Povrće"
-    ]
-    list_of_group_Voli = [
-        "Svinjetina", "Junetina", "Piletina", "Piletina smrznuto",
-        "Ćuretina smrznuto", "Teletina", "Roštilj", "Mlijeko",
-        "Edamer , gauda emental", "Ostali delikatesni sirevi",
-        "Koziji sir & ovčiji sir", "Tost & topljeni sirevi",
-        "Jogurt kefir i slično", "Maslac & margarin", "Hljeb",
-        "Tost & dvopek hljeb", "Gotove torte i kolači", "Voće",
-        "Povrće", "Dehidrirano voće", "Orašasti plodovi & sjemenke"
-    ]
 
     dbname = get_database()
 
@@ -289,7 +108,7 @@ def scraping():
     return str(result_glovo)
 
 
-@app.route('/drop-all/')
+@app.route('/drop-all')
 def drop_all():
     dbname = get_database()
     collection_name_Franca = dbname["fromFranca"]
