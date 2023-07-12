@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+from dao.CRUD import insert_to_db
 from entities.ProductClass import Product
 
 
@@ -20,17 +21,7 @@ def split_weight(describe):
     return weight
 
 
-def insert_to_db(collection_name, counter, product, sub_category, min_group):
-    item = {
-            "_id": counter,
-            "product": {
-                'name': product.name.strip(),
-                'price': product.price.strip().split('\xa0')
-            },
-            "subcategory": sub_category.strip(),
-            "group": min_group.strip()
-        }
-    collection_name.insert_one(item)
+
 
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):

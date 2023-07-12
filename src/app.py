@@ -1,6 +1,8 @@
 import os
 
 from flask import Flask, render_template
+
+from dao.CRUD import get_database
 from scraping import glovo_scraper
 from utils import from_db_to_file
 from pymongo import MongoClient
@@ -11,15 +13,7 @@ from utils.info import *
 app = Flask(__name__)
 
 
-def get_database():
-    # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = os.getenv('MONGO_CONN_STR', "mongodb://user:pass@localhost/?retryWrites=true&w=majority")
 
-    # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-    client = MongoClient(CONNECTION_STRING)
-
-    # Create the database for our example (we will use the same database throughout the tutorial
-    return client['productsDB']
 
 
 @app.route('/')
