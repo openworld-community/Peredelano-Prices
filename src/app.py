@@ -9,17 +9,60 @@ from pymongo import MongoClient
 import folium
 from utils.map_events import add_handler_for_coords, add_handler_for_marker
 from utils.info import *
+from dao.CRUD import *
 
 app = Flask(__name__)
 
 
-
-
-
 @app.route('/')
-def hello_world():  # put application's code here
-
+def hello_world():
     return render_template("start_page.html")
+
+
+@app.route('/add-collection/<title>')
+def add_collection(title):
+    collection_name = get_collection_name(title)
+    return str(collection_name)
+
+
+@app.route('/drop-collection/<title>')
+def delete_collection(title):
+    return drop_collection(title)
+
+
+@app.route('/add-doc/<coll_name>/<name>/<price>/<group>')
+def add_doc(coll_name, name, price, group):
+    collection_name = get_collection_name(coll_name)
+    item = add_document(collection_name, name, price, group)
+    return item
+
+
+@app.route('/get-by-id/<coll_name>/<product_id>')
+def get_by_id(coll_name, product_id):
+    item = get_product_by_id(coll_name, product_id)
+    name = item["name"]
+    price = item["price"]
+    group = item["group"]
+    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+
+
+@app.route('/get-by-name/<coll_name>/<product_name>')
+def get_by_name(coll_name, product_name):
+    item = get_product_by_title(coll_name, product_name)
+    name = item["name"]
+    price = item["price"]
+    group = item["group"]
+    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+
+
+@app.route('/del-by-id/<coll_name>/<product_id>')
+def del_by_id(coll_name, product_id):
+    return delete_product_by_id(coll_name, product_id)
+
+
+@app.route('/del-by-name/<coll_name>/<product_name>')
+def del_by_name(coll_name, product_id):
+    return delete_product_by_title(coll_name, product_id)
 
 
 @app.route('/map')

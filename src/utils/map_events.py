@@ -11,6 +11,7 @@ def add_handler_for_marker(map):
     click_handler = folium.ClickForMarker()
     map.add_child(click_handler)
 
+
 def add_handler_for_coords(map):
     click_handler = folium.ClickForLatLng()
     map.add_child(click_handler)
