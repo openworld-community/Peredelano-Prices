@@ -30,10 +30,10 @@ def delete_collection(title):
     return drop_collection(title)
 
 
-@app.route('/add-doc/<coll_name>/<name>/<price>/<group>')
-def add_doc(coll_name, name, price, group):
+@app.route('/add-doc/<coll_name>/<name>/<price>/<group>/<market>')
+def add_doc(coll_name, name, price, group, market):
     collection_name = get_collection_name(coll_name)
-    item = add_document(collection_name, name, price, group)
+    item = add_document(collection_name, name, price, group, market)
     return item
 
 
@@ -63,6 +63,43 @@ def del_by_id(coll_name, product_id):
 @app.route('/del-by-name/<coll_name>/<product_name>')
 def del_by_name(coll_name, product_id):
     return delete_product_by_title(coll_name, product_id)
+
+
+@app.route('/get-by-subcat/<coll_name>/<category>')
+def get_docs_by_category(coll_name, category):
+    docs = get_products_by_category(coll_name, category)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-subcat/<coll_name>/<sub_cat>')
+def get_docs_by_subcat(coll_name, sub_cat):
+    docs = get_products_by_subcategory(coll_name, sub_cat)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-group/<coll_name>/<group>')
+def get_docs_by_group(coll_name, group):
+    docs = get_products_by_group(coll_name, group)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-group/<coll_name>/<market>')
+def get_docs_by_market(coll_name, market):
+    docs = get_products_by_market(coll_name, market)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
 
 
 @app.route('/map')

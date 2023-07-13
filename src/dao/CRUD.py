@@ -11,7 +11,7 @@ def get_database():
     return client['productsDB']
 
 
-def insert_to_db(collection_name, counter, product, sub_category, min_group):
+def insert_to_db_from_scraping(collection_name, counter, product, sub_category, min_group):
     item = {
         "_id": counter,
         "product": {
@@ -30,11 +30,13 @@ def get_collection_name(title):
     return collection_name
 
 
-def add_document(collection_name, title, price, group):
+# потом еще как нибудь добавим срок годности
+def add_document(collection_name, title, price, group, market):
     item = {
         "name": title,
         "price": price,
-        "group": group
+        "group": group,
+        "market": market
     }
     collection_name.insert_one(item)
     return "item"
@@ -79,12 +81,36 @@ def delete_product_by_title(coll_name, name):
     return "deleted"
 
 
-def get_products_by_subcategory():
-    pass
+def get_products_by_category(coll_name, category):
+    dbname = get_database()
+    collection_name = dbname[coll_name]
+    query = {'category': category}
+    documents = collection_name.find(query)
+    return documents
 
 
-def get_products_by_group():
-    pass
+def get_products_by_subcategory(coll_name, subcategory):
+    dbname = get_database()
+    collection_name = dbname[coll_name]
+    query = {'subcategory': subcategory}
+    documents = collection_name.find(query)
+    return documents
+
+
+def get_products_by_group(coll_name, group):
+    dbname = get_database()
+    collection_name = dbname[coll_name]
+    query = {'group': group}
+    documents = collection_name.find(query)
+    return documents
+
+
+def get_products_by_market(coll_name, market):
+    dbname = get_database()
+    collection_name = dbname[coll_name]
+    query = {'market': market}
+    documents = collection_name.find(query)
+    return documents
 
 
 def get_the_cheapest_product_in_group():

@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-from dao.CRUD import insert_to_db
+from dao.CRUD import insert_to_db_from_scraping
 from entities.ProductClass import Product
 
 
@@ -130,7 +130,7 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     product = Product(name_to_db, price_to_db)
                     counter += 1
 
-                    insert_to_db(collection_name, counter, product, currentsubcategory, title_of_min_group)
+                    insert_to_db_from_scraping(collection_name, counter, product, currentsubcategory, title_of_min_group)
 
 
     with open("file.txt", "w") as file:
