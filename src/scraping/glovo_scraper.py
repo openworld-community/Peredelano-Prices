@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
+from dao.CRUD import insert_to_db_from_scraping
 from entities.ProductClass import Product
 
 
@@ -9,28 +10,6 @@ def get_soup_from_url(url: str):
         result = session.get(url)
 
     return BeautifulSoup(result.text, "html.parser").find('div', 'store__body__dynamic-content')
-
-
-def split_weight(describe):
-    # 'weight': split_weight(temp_product.name.strip().lower().split())
-    weight = []
-    for word in range(len(describe)):
-        if describe[word] == 'l' or describe[word] == 'ml' or describe[word] == 'g':
-            weight = [describe[word - 1], describe[word]]
-    return weight
-
-
-def insert_to_db(collection_name, counter, product, sub_category, min_group):
-    item = {
-            "_id": counter,
-            "product": {
-                'name': product.name.strip(),
-                'price': product.price.strip().split('\xa0')
-            },
-            "subcategory": sub_category.strip(),
-            "group": min_group.strip()
-        }
-    collection_name.insert_one(item)
 
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
@@ -139,7 +118,7 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     product = Product(name_to_db, price_to_db)
                     counter += 1
 
-                    insert_to_db(collection_name, counter, product, currentsubcategory, title_of_min_group)
+                    insert_to_db_from_scraping(collection_name, counter, product, currentsubcategory, title_of_min_group)
 
 
     with open("file.txt", "w") as file:

@@ -1,31 +1,136 @@
-import os
-
 from flask import Flask, render_template
+import folium
+from folium.plugins import MousePosition
+
 from scraping import glovo_scraper
 from utils import from_db_to_file
-from pymongo import MongoClient
-import folium
-from utils.map_events import add_handler_for_coords, add_handler_for_marker
+from utils.get_weight import *
 from utils.info import *
+from dao.CRUD import *
 
 app = Flask(__name__)
 
 
-def get_database():
-    # Provide the mongodb atlas url to connect python to mongodb using pymongo
-    CONNECTION_STRING = os.getenv('MONGO_CONN_STR', "mongodb://user:pass@localhost/?retryWrites=true&w=majority")
-
-    # Create a connection using MongoClient. You can import MongoClient or use pymongo.MongoClient
-    client = MongoClient(CONNECTION_STRING)
-
-    # Create the database for our example (we will use the same database throughout the tutorial
-    return client['productsDB']
-
-
 @app.route('/')
-def hello_world():  # put application's code here
-
+def hello_world():
     return render_template("start_page.html")
+
+
+@app.route('/weight-to-file')
+def weight_to_file():
+    write_weight_to_file()
+
+    list_to_return = list()
+
+    try:
+        with open("weight_check.txt", 'r') as file:
+            for temp_str in file:
+                list_to_return.append(temp_str)
+
+        return list_to_return
+    except FileNotFoundError:
+        return "Файл weight_check.txt не найден, 404"
+
+
+@app.route('/tree-of-category')
+def get_tree_of_category():
+    return tree_of_categories
+
+
+@app.route('/coords-of-markets/<market>')
+def get_coords_of_markets(market):
+    to_ret = None
+    match market:
+        case "Aroma":
+            to_ret = coords_of_Aroma_markets
+        case "Franca":
+            to_ret = coords_of_Franca_markets
+        case "Voli":
+            to_ret = coords_of_Voli_markets
+
+    return to_ret
+
+
+@app.route('/add-collection/<title>')
+def add_collection(title):
+    collection_name = get_collection_name(title)
+    return str(collection_name)
+
+
+@app.route('/drop-collection/<title>')
+def delete_collection(title):
+    return drop_collection(title)
+
+
+@app.route('/add-doc/<coll_name>/<name>/<price>/<group>/<market>')
+def add_doc(coll_name, name, price, group, market):
+    collection_name = get_collection_name(coll_name)
+    item = add_document(collection_name, name, price, group, market)
+    return item
+
+
+@app.route('/get-by-id/<coll_name>/<product_id>')
+def get_by_id(coll_name, product_id):
+    item = get_product_by_id(coll_name, product_id)
+    name = item["name"]
+    price = item["price"]
+    group = item["group"]
+    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+
+
+@app.route('/get-by-name/<coll_name>/<product_name>')
+def get_by_name(coll_name, product_name):
+    item = get_product_by_title(coll_name, product_name)
+    name = item["name"]
+    price = item["price"]
+    group = item["group"]
+    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+
+
+@app.route('/del-by-id/<coll_name>/<product_id>')
+def del_by_id(coll_name, product_id):
+    return delete_product_by_id(coll_name, product_id)
+
+
+@app.route('/del-by-name/<coll_name>/<product_name>')
+def del_by_name(coll_name, product_id):
+    return delete_product_by_title(coll_name, product_id)
+
+
+@app.route('/get-by-subcat/<coll_name>/<category>')
+def get_docs_by_category(coll_name, category):
+    docs = get_products_by_category(coll_name, category)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-subcat/<coll_name>/<sub_cat>')
+def get_docs_by_subcat(coll_name, sub_cat):
+    docs = get_products_by_subcategory(coll_name, sub_cat)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-group/<coll_name>/<group>')
+def get_docs_by_group(coll_name, group):
+    docs = get_products_by_group(coll_name, group)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
+
+
+@app.route('/get-by-group/<coll_name>/<market>')
+def get_docs_by_market(coll_name, market):
+    docs = get_products_by_market(coll_name, market)
+    count = 0
+    for doc in docs:
+        count += 1
+    return str(count)
 
 
 @app.route('/map')
@@ -42,8 +147,11 @@ def open_map():
     for coords in coords_of_Voli_markets:
         folium.Marker(location=coords, popup="Voli", icon=folium.Icon(color='green')).add_to(map)
 
-    add_handler_for_marker(map)
-    add_handler_for_coords(map)
+    map.add_child(folium.ClickForLatLng())
+    map.add_child(folium.LatLngPopup())
+    map.add_child(folium.ClickForMarker())
+
+    MousePosition().add_to(map)
 
     map.save("templates/Podgorica_map.html")
 
