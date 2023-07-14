@@ -12,18 +12,6 @@ def get_soup_from_url(url: str):
     return BeautifulSoup(result.text, "html.parser").find('div', 'store__body__dynamic-content')
 
 
-def split_weight(describe):
-    # 'weight': split_weight(temp_product.name.strip().lower().split())
-    weight = []
-    for word in range(len(describe)):
-        if describe[word] == 'l' or describe[word] == 'ml' or describe[word] == 'g':
-            weight = [describe[word - 1], describe[word]]
-    return weight
-
-
-
-
-
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
     counter = 0
     list_to_write = list()

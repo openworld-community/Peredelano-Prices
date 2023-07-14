@@ -4,6 +4,7 @@ import csv
 list_of_errors = list()
 list_to_write = list()
 
+
 def update_group_to_custom(dictionary, cur_cat, isFound, product_id, product_name, group):
     if not isFound:
         for key, value in dictionary.items():

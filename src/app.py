@@ -1,8 +1,10 @@
 from flask import Flask, render_template
-from scraping import glovo_scraper
-from utils import from_db_to_file
 import folium
 from folium.plugins import MousePosition
+
+from scraping import glovo_scraper
+from utils import from_db_to_file
+from utils.get_weight import *
 from utils.info import *
 from dao.CRUD import *
 
@@ -12,6 +14,22 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template("start_page.html")
+
+
+@app.route('/weight-to-file')
+def weight_to_file():
+    write_weight_to_file()
+
+    list_to_return = list()
+
+    try:
+        with open("weight_check.txt", 'r') as file:
+            for temp_str in file:
+                list_to_return.append(temp_str)
+
+        return list_to_return
+    except FileNotFoundError:
+        return "Файл weight_check.txt не найден, 404"
 
 
 @app.route('/tree-of-category')
