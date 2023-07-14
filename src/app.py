@@ -1,13 +1,8 @@
-import os
-
 from flask import Flask, render_template
-
-from dao.CRUD import get_database
 from scraping import glovo_scraper
 from utils import from_db_to_file
-from pymongo import MongoClient
 import folium
-from utils.map_events import add_handler_for_coords, add_handler_for_marker
+from folium.plugins import MousePosition
 from utils.info import *
 from dao.CRUD import *
 
@@ -101,7 +96,6 @@ def get_docs_by_market(coll_name, market):
     return str(count)
 
 
-
 @app.route('/map')
 def open_map():
 
@@ -116,8 +110,11 @@ def open_map():
     for coords in coords_of_Voli_markets:
         folium.Marker(location=coords, popup="Voli", icon=folium.Icon(color='green')).add_to(map)
 
-    add_handler_for_marker(map)
-    add_handler_for_coords(map)
+    map.add_child(folium.ClickForLatLng())
+    map.add_child(folium.LatLngPopup())
+    map.add_child(folium.ClickForMarker())
+
+    MousePosition().add_to(map)
 
     map.save("templates/Podgorica_map.html")
 
