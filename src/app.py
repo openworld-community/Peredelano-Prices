@@ -14,6 +14,25 @@ def hello_world():
     return render_template("start_page.html")
 
 
+@app.route('/tree-of-category')
+def get_tree_of_category():
+    return tree_of_categories
+
+
+@app.route('/coords-of-markets/<market>')
+def get_coords_of_markets(market):
+    to_ret = None
+    match market:
+        case "Aroma":
+            to_ret = coords_of_Aroma_markets
+        case "Franca":
+            to_ret = coords_of_Franca_markets
+        case "Voli":
+            to_ret = coords_of_Voli_markets
+
+    return to_ret
+
+
 @app.route('/add-collection/<title>')
 def add_collection(title):
     collection_name = get_collection_name(title)
