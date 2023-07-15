@@ -1,7 +1,8 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 import folium
 from folium.plugins import MousePosition
 
+from dao.Users_db import *
 from scraping import glovo_scraper
 from utils import from_db_to_file
 from utils.get_weight import *
@@ -14,6 +15,24 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template("start_page.html")
+
+
+@app.route('/add-user/test')
+def test_add_user():
+    add_user("testname", "testpass", "slave", "1")
+    doc = get_user_by_name("testname")
+    return str(doc)
+
+
+@app.route('/update-user/test')
+def test_update_user_acc():
+    list_to_show = list()
+    list_to_show.append(str(get_user_by_name("testname")))
+    updated_user = update_acc("testname", "subscription_level", "2")
+    list_to_show.append(str(updated_user))
+    if updated_user["subscription_level"] == "2":
+        list_to_show.append(str(update_acc("testname", "role", "dungeon_master")))
+    return jsonify(results=list_to_show)
 
 
 @app.route('/weight-to-file')
@@ -66,25 +85,19 @@ def delete_collection(title):
 def add_doc(coll_name, name, price, group, market):
     collection_name = get_collection_name(coll_name)
     item = add_document(collection_name, name, price, group, market)
-    return item
+    return jsonify(item)
 
 
 @app.route('/get-by-id/<coll_name>/<product_id>')
 def get_by_id(coll_name, product_id):
     item = get_product_by_id(coll_name, product_id)
-    name = item["name"]
-    price = item["price"]
-    group = item["group"]
-    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+    return jsonify(item)
 
 
 @app.route('/get-by-name/<coll_name>/<product_name>')
 def get_by_name(coll_name, product_name):
     item = get_product_by_title(coll_name, product_name)
-    name = item["name"]
-    price = item["price"]
-    group = item["group"]
-    return str(name) + "\n" + str(price) + "\n" + str(group) + "\n"
+    return jsonify(item)
 
 
 @app.route('/del-by-id/<coll_name>/<product_id>')
@@ -99,38 +112,26 @@ def del_by_name(coll_name, product_id):
 
 @app.route('/get-by-subcat/<coll_name>/<category>')
 def get_docs_by_category(coll_name, category):
-    docs = get_products_by_category(coll_name, category)
-    count = 0
-    for doc in docs:
-        count += 1
-    return str(count)
+    docs_list = get_products_by_category(coll_name, category)
+    return jsonify(results=docs_list)
 
 
 @app.route('/get-by-subcat/<coll_name>/<sub_cat>')
 def get_docs_by_subcat(coll_name, sub_cat):
-    docs = get_products_by_subcategory(coll_name, sub_cat)
-    count = 0
-    for doc in docs:
-        count += 1
-    return str(count)
+    docs_list = get_products_by_subcategory(coll_name, sub_cat)
+    return jsonify(results=docs_list)
 
 
 @app.route('/get-by-group/<coll_name>/<group>')
 def get_docs_by_group(coll_name, group):
-    docs = get_products_by_group(coll_name, group)
-    count = 0
-    for doc in docs:
-        count += 1
-    return str(count)
+    docs_list = get_products_by_group(coll_name, group)
+    return jsonify(results=docs_list)
 
 
 @app.route('/get-by-group/<coll_name>/<market>')
 def get_docs_by_market(coll_name, market):
-    docs = get_products_by_market(coll_name, market)
-    count = 0
-    for doc in docs:
-        count += 1
-    return str(count)
+    docs_list = get_products_by_market(coll_name, market)
+    return jsonify(results=docs_list)
 
 
 @app.route('/map')

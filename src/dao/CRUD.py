@@ -39,7 +39,7 @@ def add_document(collection_name, title, price, group, market):
         "market": market
     }
     collection_name.insert_one(item)
-    return "item"
+    return item
 
 
 def drop_collection(title):
@@ -68,7 +68,7 @@ def delete_product_by_id(coll_name, document_id):
 def get_product_by_title(coll_name, name):
     dbname = get_database()
     collection_name = dbname[coll_name]
-    query = {'name': name}
+    query = {'product.name': name}
     document = collection_name.find_one(query)
     return document
 
@@ -76,7 +76,7 @@ def get_product_by_title(coll_name, name):
 def delete_product_by_title(coll_name, name):
     dbname = get_database()
     collection_name = dbname[coll_name]
-    query = {'name': name}
+    query = {'product.name': name}
     collection_name.delete_one(query)
     return "deleted"
 
@@ -86,7 +86,8 @@ def get_products_by_category(coll_name, category):
     collection_name = dbname[coll_name]
     query = {'category': category}
     documents = collection_name.find(query)
-    return documents
+    documents_list = list(documents)
+    return documents_list
 
 
 def get_products_by_subcategory(coll_name, subcategory):
@@ -94,7 +95,8 @@ def get_products_by_subcategory(coll_name, subcategory):
     collection_name = dbname[coll_name]
     query = {'subcategory': subcategory}
     documents = collection_name.find(query)
-    return documents
+    documents_list = list(documents)
+    return documents_list
 
 
 def get_products_by_group(coll_name, group):
@@ -102,7 +104,8 @@ def get_products_by_group(coll_name, group):
     collection_name = dbname[coll_name]
     query = {'group': group}
     documents = collection_name.find(query)
-    return documents
+    documents_list = list(documents)
+    return documents_list
 
 
 def get_products_by_market(coll_name, market):
@@ -110,7 +113,8 @@ def get_products_by_market(coll_name, market):
     collection_name = dbname[coll_name]
     query = {'market': market}
     documents = collection_name.find(query)
-    return documents
+    documents_list = list(documents)
+    return documents_list
 
 
 def get_the_cheapest_product_in_group():

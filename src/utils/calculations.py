@@ -89,3 +89,10 @@ def analyze_prices(prices):
 def calculate_price_difference(min_price, avg_price):
     difference_percent = ((avg_price - min_price) / avg_price) * 100
     return difference_percent
+
+
+def price_per_kg(price, weight):
+    if price and weight:
+        return float(price)/float(weight)*1000
+    else:
+        return None
