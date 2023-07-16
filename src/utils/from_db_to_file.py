@@ -26,10 +26,6 @@ def update_group_to_custom(dictionary, cur_cat, isFound, product_id, product_nam
                     isWrited = True
             if not isWrited:
                 list_to_write.append([product_id, product_name, toRet])
-            # list_of_errors.append([toRet])
-            #
-
-
 
 
 def to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_of_group_Voli, dbname):

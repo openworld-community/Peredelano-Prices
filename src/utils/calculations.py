@@ -1,5 +1,4 @@
 from math import radians, sin, cos, sqrt, atan2
-import info
 
 
 def distance(lat1, lon1, lat2, lon2):
@@ -93,6 +92,11 @@ def calculate_price_difference(min_price, avg_price):
 
 def price_per_kg(price, weight):
     if price and weight:
+        price = replace_comma_with_dot(price)
         return float(price)/float(weight)*1000
     else:
         return None
+
+
+def replace_comma_with_dot(number_str):
+    return number_str.replace(',', '.')

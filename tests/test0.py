@@ -1,11 +1,5 @@
-file = open('file.txt', 'r+')
+from classification.test_local import classificator_test
+from dao.add_new_fields_to_docs import add_weight_field
+from utils.calculations import replace_comma_with_dot
 
-# Чтение данных из файла
-data = file.read()
-print(data)
-
-# Запись данных в файл
-file.write('Новые данные')
-
-# Закрытие файла
-file.close()
+print(classificator_test("Francuski makaronsi 24 kom 288g Chateau"))
