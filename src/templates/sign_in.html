@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign-in</title>
+</head>
+<body>
+    <h1>Sign-in</h1>
+    <form action="{{ url_for('login') }}" method="post">
+        <label for="username">username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+    <p>Create account <a href="{{ url_for('register') }}">sign-up</a></p>
+</body>
+</html>
