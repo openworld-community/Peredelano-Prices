@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for, flash
+from pymongo import MongoClient
 import folium
 from folium.plugins import MousePosition
 
@@ -9,6 +10,47 @@ from utils.info import *
 from dao.CRUD import *
 
 app = Flask(__name__)
+
+
+@app.route('/sing-up', methods=['GET', 'POST'])
+def sing_up():
+    try:
+        client = MongoClient('mongodb://localhost:27017/')
+        db = client['usersdb']
+        collection = db['users']
+    except:
+        pass
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if collection.find_one({'username': username}):
+            flash('Такой пользователь уже существует', 'error')
+        else:
+            user = {'username': username, 'password': password}
+            collection.insert_one(user)
+            flash('Вы успешно зарегистрированы', 'success')
+            return redirect(url_for('login'))
+    return render_template('sing_up.html')
+
+
+@app.route('/sign-in', methods=['GET', 'POST'])
+def sign_in():
+    try:
+        client = MongoClient('mongodb://localhost:27017/')
+        db = client['usersdb']
+        collection = db['users']
+    except:
+        pass
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = collection.find_one({'username': username, 'password': password})
+        if user:
+            flash('Вы успешно вошли', 'success')
+            return redirect(url_for('profile'))
+        else:
+            flash('Неверные учетные данные', 'error')
+    return render_template('sign_in.html')
 
 
 @app.route('/')
@@ -135,7 +177,6 @@ def get_docs_by_market(coll_name, market):
 
 @app.route('/map')
 def open_map():
-
     map = folium.Map(location=[42.44510285, 19.258387751564968], zoom_start=14)
 
     for coords in coords_of_Aroma_markets:
@@ -160,10 +201,10 @@ def open_map():
 
 @app.route('/to-file')
 def to_file():
-
     dbname = get_database()
 
-    counter = from_db_to_file.to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_of_group_Voli, dbname)
+    counter = from_db_to_file.to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_of_group_Voli,
+                                      dbname)
 
     return str(counter)
 
