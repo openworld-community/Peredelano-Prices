@@ -11,13 +11,6 @@ def get_database():
     return client['productsDB']
 
 
-def get_database_users():
-    CONNECTION_STRING = os.getenv('MONGO_CONN_STR', "mongodb://user:pass@localhost/?retryWrites=true&w=majority")
-    client = MongoClient(CONNECTION_STRING)
-
-    return client['userDB']
-
-
 def insert_to_db_from_scraping(collection_name, counter, product, sub_category, min_group):
     item = {
         "_id": counter,

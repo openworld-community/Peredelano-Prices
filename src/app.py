@@ -1,10 +1,13 @@
+from bson import ObjectId
 from flask import Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 import requests
+import bcrypt
 
-from dao.CRUD import get_database_users
+from dao.Users_db import get_database_users, add_user
 from dao.add_new_fields_to_docs import add_weight_and_price_per_kg
 from entities.UserClass import User
+from utils.hash_check import hash_password, check_password
 
 from routes.collections_routes import collections_bp
 from routes.map_routes import map_bp
@@ -42,6 +45,8 @@ app.register_blueprint(user_choice_bp)
 
 
 login_manager = LoginManager(app)
+app.config['SECRET_KEY'] = 'your_secret_key_here'
+login_manager.login_view = 'login'
 
 
 @login_manager.user_loader
@@ -49,9 +54,11 @@ def load_user(user_id):
     dbname = get_database_users()
     collection_name = dbname["users"]
 
-    user_data = collection_name.find_one({'_id': user_id})
+    user_data = collection_name.find_one({'_id': ObjectId(user_id)})
     if user_data:
         return User(user_data)
+
+    return None
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -63,12 +70,17 @@ def register():
         username = request.form['username']
         password = request.form['password']
 
-        existing_user = collection_name.find_one({'username': username})
+        existing_user = collection_name.find_one({'user.name': username})
         if existing_user:
             return 'This user already exists!'
 
-        new_user = {'username': username, 'password': password}
-        user_id = collection_name.insert_one(new_user).inserted_id
+        hashed_password = hash_password(password)
+
+        #   #   #   #   #   #   #   #
+
+        add_user(username, hashed_password)
+
+        #   #   #   #   #   #   #   #
 
         return redirect(url_for('login'))
 
@@ -84,11 +96,12 @@ def login():
         username = request.form['username']
         password = request.form['password']
 
-        user_data = collection_name.find_one({'username': username})
-        if user_data and user_data['password'] == password:
+        user_data = collection_name.find_one({'user.name': username})
+        if user_data and check_password(password, user_data['user']['password']):
             user = User(user_data)
             login_user(user)
             return redirect(url_for('dashboard'))
+            # return "all_ok"
 
         return 'The username or password you entered is incorrect!'
 
@@ -98,6 +111,7 @@ def login():
 @app.route('/dashboard')
 @login_required
 def dashboard():
+    # return "its your personal area"
     return f'Hi, {current_user.username}! Welcome to your personal area!'
 
 
@@ -106,6 +120,21 @@ def dashboard():
 def logout():
     logout_user()
     return redirect(url_for('login'))
+
+
+@app.route('/admin-page')
+@login_required
+def admin_page():
+    if not current_user.is_admin():
+        return f'Hi, {current_user.username}! \n go fuck yourself! ' \
+               f'\n you are not admin \n you are {current_user.role}'
+    return f'Hi, {current_user.username}! Welcome to your ADMIN page!'
+
+
+@app.route('/user-page')
+@login_required
+def user_page():
+    return 'Привет, user! Это ваша личная область.'
 
 
 @app.route('/test-add-fields')

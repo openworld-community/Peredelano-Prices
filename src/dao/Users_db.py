@@ -1,16 +1,26 @@
-from dao.CRUD import get_collection_name
+from pymongo import MongoClient
+import os
 
-collection_name = get_collection_name("users")
+
+def get_database_users():
+    CONNECTION_STRING = os.getenv('MONGO_CONN_STR', "mongodb://user:pass@localhost/?retryWrites=true&w=majority")
+    client = MongoClient(CONNECTION_STRING)
+
+    return client['usersDB']
 
 
-def add_user(name, password, role, subscription_level):
+dbname = get_database_users()
+collection_name = dbname["users"]
+
+
+def add_user(name, password):#, role, subscription_level):
     item = {
         "user": {
             'name': name,
             'password': password
         },
-        'role': role,
-        'subscription_level': subscription_level,
+        'role': "user",
+        'subscription_level': "subscription_level_1",
         'info': {
             'history_of_orders': ["empty", "empty"],
             'top_products': ["empty", "empty"],
