@@ -1,5 +1,4 @@
-from dao.CRUD import *
-
+from dao.CRUD import get_collection_name
 
 collection_name = get_collection_name("users")
 

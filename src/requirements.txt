@@ -1,8 +1,8 @@
 flask==2.3.2
-pymongo==4.4.0
+pymongo==4.4.1
 bs4==0.0.1
 requests==2.31.0
 beautifulsoup4~=4.12.2
 folium~=0.14.0
-sklearn
-
+scikit-learn
+flask-login

@@ -15,10 +15,6 @@ market: Aroma
     
       Pršut,čajna,budimska,suvi vrat,kulen
   subcategory: 
-      Jaja
-    
-      Kokosija jaja
-  subcategory: 
       Mlijeko
     
       Dugotrajno mlijeko
@@ -38,6 +34,7 @@ market: Aroma
       Kisjelo mlijeko
       Pavlaka
       Kefir
+      Paprika u pavlaci
       Voćni jogurt
   subcategory: 
       Pavlaka za kuvanje, slatka pavlaka, šlag
@@ -61,14 +58,13 @@ market: Aroma
       Rinfuzna roba
     
       Rinfuzni pistaci
-      Rinfuzno suvo grozdje
       Rinfuzne sjemenke bundeve
       Rinfuzno voće
       Rinfuzni ljesnik
       Rinfurni kukuruz
       Rinfuzni badem
-      Rinfuzni kikiriki
       Rinfuzni orah
+      Ostalo rinfuzno suvo voce
   subcategory: 
       Pakovani hljeb
     
@@ -203,8 +199,6 @@ market: Voli
       Morska riba smrznuto
       Plodovi mora smrznuto
       Panirani riblji proizvodi smrznuto
-      Slatkovodna riba
-      Morska riba
   subcategory: 
       Svježe voće i povrće
     
