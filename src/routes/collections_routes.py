@@ -1,6 +1,7 @@
 from flask import Blueprint
 
 from dao.CRUD import *
+from dao.add_new_fields_to_docs import add_weight_and_price_per_kg
 
 # Создаем Blueprint, чтобы определить маршруты
 collections_bp = Blueprint('collections_routes', __name__)
@@ -10,6 +11,12 @@ collections_bp = Blueprint('collections_routes', __name__)
 def add_collection(title):
     collection_name = get_collection_name(title)
     return str(collection_name)
+
+
+@collections_bp.route('/test-add-fields')
+def test_add_fields():
+    counter = add_weight_and_price_per_kg()
+    return str(counter)
 
 
 @collections_bp.route('/drop-collection/<title>')

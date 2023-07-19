@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tests</title>
+</head>
+<body>
+<h2>message:</h2>
+<div id="message"></div>
+<br>
+<hr>
+<button id="loadDataBtn">load data from back</button>
+<button id="sendDataBtn">send data to back</button>
+
+<button id="createButtonsBtn">create buttons</button>
+<div id="buttons-container"></div>
+<button id="sendDataAboutButtonsBtn">send data about buttons to back</button>
+<br>
+<hr>
+<h2>stats:</h2>
+<div id="output"></div>
+
+<script>
+    // JavaScript для отправки запросов на бекенд
+    const messageDiv = document.getElementById('message');
+    const loadDataBtn = document.getElementById('loadDataBtn');
+    const sendDataBtn = document.getElementById('sendDataBtn')
+
+    // JavaScript для управления кнопками и отправки данных на бекенд
+    const buttonsContainer = document.getElementById('buttons-container');
+    const sendDataAboutButtonsBtn = document.getElementById('sendDataAboutButtonsBtn');
+    const createButtonsBtn = document.getElementById('createButtonsBtn')
+    let buttonData = {};
+
+
+    // Функция для отправки GET-запроса на сервер и вывода данных
+    function fetchDataFromBackend() {
+        fetch('/api/data') // Здесь указывается URL для вашего бекенда
+            .then(response => response.json())
+            .then(data => {
+                messageDiv.textContent = `Сообщение: ${data.message}, Данные: ${data.data.join(', ')}`;
+            })
+            .catch(error => {
+                console.error('Ошибка при получении данных с бекенда:', error);
+                messageDiv.textContent = 'Ошибка при загрузке данных с бекенда.';
+            });
+    }
+
+    // Функция для отправки данных на бекенд, POST-запрос
+    function sendDataToBackend() {
+        const dataToSend = {
+            "message": "hello from frontend!",
+            "data": [6, 7, 8, 9, 10]
+        };
+
+        fetch('/api/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataToSend)
+        })
+            .then(response => response.json())
+            .then(data => {
+                messageDiv.textContent = `Сообщение: ${data.message}, Данные: ${data.data.join(', ')}`;
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных на бекенд:', error);
+                messageDiv.textContent = 'Ошибка при отправке данных на бекенд.';
+            });
+    }
+
+    // Функция для отправки данных на бекенд
+    function sendDataAboutButtonsToBackend() {
+        fetch('/api/data', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ data: buttonData })
+        })
+            .then(response => response.json())
+            .then(data => {
+                    const outputDiv = document.getElementById('output');
+                    const dataArray = Object.entries(data.data);
+
+                    let outputHTML = '<p>Полученные данные:</p>';
+                    outputHTML += '<ul>';
+                    dataArray.forEach(([buttonId, count]) => {
+                        outputHTML += `<li>Кнопка ${buttonId}: ${count} раз(а)</li>`;
+                    });
+                    outputHTML += '</ul>';
+                    outputDiv.innerHTML = outputHTML;
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных на бекенд:', error);
+                alert('Ошибка при отправке данных на бекенд.');
+            });
+    }
+
+    // Функция для создания кнопок
+    function createButtons() {
+        for (let i = 1; i <= 10; i++) {
+            const button = document.createElement('button');
+            button.textContent = `Кнопка ${i}`;
+            button.dataset.buttonId = i;
+            button.dataset.count = 0;
+
+            button.addEventListener('click', handleButtonClick);
+            buttonsContainer.appendChild(button);
+        }
+    }
+
+    // Обработчик нажатия на кнопку
+    function handleButtonClick(event) {
+        const buttonId = event.target.dataset.buttonId;
+        const currentCount = parseInt(event.target.dataset.count);
+        const newCount = currentCount + 1;
+
+        event.target.dataset.count = newCount;
+        buttonData[buttonId] = newCount;
+    }
+
+
+    // Обработчики нажатия на кнопку
+    loadDataBtn.addEventListener('click', fetchDataFromBackend);
+    sendDataBtn.addEventListener('click', sendDataToBackend);
+
+
+    // Вызов функции создания кнопок при нажатии на кнопку создания кнопок
+    createButtonsBtn.addEventListener('click', createButtons);
+    // Обработчик нажатия на кнопку "Отправить данные на бекенд"
+    sendDataAboutButtonsBtn.addEventListener('click', sendDataAboutButtonsToBackend);
+
+    {#--  --  --  --  --  --  --  --  --  --  --  --  --  --  --#}
+    {#--  --  --  --  --  --  --  --  --  --  --  --  --  --  --#}
+
+
+    // Вызов функции создания кнопок после полной загрузки документа
+    // document.addEventListener('DOMContentLoaded', createButtons);
+
+
+</script>
+
+
+</body>
+</html>
