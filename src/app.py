@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 import requests
-
+from scraping.open_food_facts_scraper import open_food_facts_scraper
 from dao.CRUD import get_database_users
 from dao.add_new_fields_to_docs import add_weight_and_price_per_kg
 from entities.UserClass import User
@@ -129,6 +129,10 @@ def test_request():
         return result
     else:
         return response.text
+
+@app.route('/test-request2')
+def test_request2():
+    return open_food_facts_scraper()
 
 
 if __name__ == '__main__':
