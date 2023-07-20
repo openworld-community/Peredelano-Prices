@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User page</title>
+</head>
+<body>
+<h2>Message:</h2>
+<div id="message"></div>
+<button id="showInfo">show info about me</button>
+<div id="data-container">
+    <!-- Здесь будут выведены данные с сервера -->
+</div>
+<script>
+    const dataContainer = document.getElementById('data-container');
+    const showInfoBtn = document.getElementById('showInfo')
+    const messageDiv = document.getElementById('message');
+    // JavaScript для получения данных с сервера
+    function show_info(){
+        fetch('/info-for-user')
+            .then(response => response.json())
+            .then(data => {
+                // Выводим полученные данные на странице
+                const markup = `
+                    <h2>Данные пользователя:</h2>
+                    <p><strong>Имя пользователя:</strong> ${data.username}</p>
+                    <p><strong>Роль:</strong> ${data.role}</p>
+                    <p><strong>Уровень подписки:</strong> ${data.subscription_level}</p>
+
+                `;
+                dataContainer.innerHTML = markup;
+
+                {#dataContainer.innerHTML = JSON.stringify(data, null, 2);#}
+                messageDiv.textContent = 'all_ok';
+            })
+            .catch(error => {
+                console.error('Ошибка при получении данных:', error);
+                messageDiv.textContent = 'Ошибка при загрузке данных с бекенда.';
+            });
+    }
+    showInfoBtn.addEventListener('click', show_info);
+
+</script>
+</body>
+</html>

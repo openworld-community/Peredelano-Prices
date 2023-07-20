@@ -1,6 +1,7 @@
 from bson import ObjectId
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
+import json
 
 from dao.Users_db import get_database_users, add_user
 from entities.UserClass import User
@@ -101,16 +102,59 @@ def load_user(user_id):
 @app.route('/admin-page')
 @login_required
 def admin_page():
-    if not current_user.is_admin():
-        return f'Hi, {current_user.username}! \n go fuck yourself! ' \
-               f'\n you are not admin \n you are {current_user.role}'
-    return f'Hi, {current_user.username}! Welcome to your ADMIN page! Your role: {current_user.role}'
+    return render_template('admin_page.html')
+
+
+@app.route('/info-for-admin', methods=['GET', 'POST'])
+@login_required
+def info_for_admin():
+    dbname = get_database_users()
+    collection_name = dbname["users"]
+    if request.method == 'GET':
+        user_data = collection_name.find_one({'user.name': current_user.username})
+        name = user_data['user']['name']
+        role = user_data['role']
+        subscription_level = user_data['subscription_level']
+        data = {
+            "username": name,
+            "role": role,
+            "subscription_level": subscription_level
+        }
+        return jsonify(data)
+    else:
+        data = {
+            "message": "your methods not get"
+        }
+        return jsonify(data)
 
 
 @app.route('/user-page')
 @login_required
 def user_page():
-    return f'Hi, {current_user.username}! Welcome to your USER page! Your role: {current_user.role}'
+    return render_template('user_page.html')
+
+
+@app.route('/info-for-user', methods=['GET', 'POST'])
+@login_required
+def info_for_user():
+    dbname = get_database_users()
+    collection_name = dbname["users"]
+    if request.method == 'GET':
+        user_data = collection_name.find_one({'user.name': current_user.username})
+        name = user_data['user']['name']
+        role = user_data['role']
+        subscription_level = user_data['subscription_level']
+        data = {
+            "username": name,
+            "role": role,
+            "subscription_level": subscription_level
+        }
+        return jsonify(data)
+    else:
+        data = {
+            "message": "your methods not get"
+        }
+        return jsonify(data)
 
 
 @app.route('/logout')
