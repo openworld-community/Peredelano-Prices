@@ -23,19 +23,23 @@ def pp_classifier(prd_name: str, clf_name: str = 'SGD_clf.pickle') -> str:
     import string
     import pickle
     import pandas as pd
+    from os import path
     
        
     name_tmp = prd_name.lower()\
         .translate(str.maketrans('','',string.punctuation))\
         .translate(str.maketrans('','',string.digits))
+
+    current_dir = path.dirname(path.abspath(__file__))
+    clf_path = path.join(current_dir, clf_name)
         
-    with open(clf_name, 'rb') as f:
+    with open(clf_path, 'rb') as f:
         clf_pickled = pickle.load(f)
         
     clf_features = clf_pickled.feature_names_in_
     
     X_test = [int(a in name_tmp.split()) for a in clf_features]
-    X_test = pd.DataFrame([X_test], columns=clf_features)
+    X_test = pd.DataFrame([X_test], columns = clf_features)
     
     return clf_pickled.predict(X_test)
     
