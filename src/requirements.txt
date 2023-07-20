@@ -8,3 +8,5 @@ scikit-learn
 flask-login
 bcrypt
 pandas
+matplotlib
+Image

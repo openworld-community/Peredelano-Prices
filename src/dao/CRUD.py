@@ -11,15 +11,15 @@ def get_database():
     return client['productsDB']
 
 
-def insert_to_db_from_scraping(collection_name, counter, product, sub_category, min_group):
+def insert_to_db_from_scraping(collection_name, counter, product):#, sub_category, min_group):
     item = {
         "_id": counter,
         "product": {
             'name': product.name.strip(),
             'price': product.price.strip().split('\xa0')
         },
-        "subcategory": sub_category.strip(),
-        "group": min_group.strip()
+        # "subcategory": sub_category.strip(),
+        # "group": min_group.strip()
     }
     collection_name.insert_one(item)
 

@@ -1,11 +1,13 @@
+import gridfs
 from bson import ObjectId
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, Response
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 import json
 
 from dao.Users_db import get_database_users, add_user
 from entities.UserClass import User
 from utils.hash_check import hash_password, check_password
+from utils.for_imgs import *
 
 from routes.collections_routes import collections_bp
 from routes.map_routes import map_bp
@@ -32,6 +34,18 @@ app.register_blueprint(utils_bp)
 app.register_blueprint(scraping_bp)
 app.register_blueprint(user_choice_bp)
 app.register_blueprint(tests_bp)
+
+
+#  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #
+
+# image_name = "img_name_" + str(counter) + ".jpg"
+# @app.route("/image/<image_name>")
+# def test_img_scrap(image_name):
+#
+#     image_data = fs.find_one({'filename': image_name}).read()
+#
+#     # Return the image data as a response
+#     return Response(image_data, content_type='image/jpeg')
 
 
 #  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 
 from dao.CRUD import insert_to_db_from_scraping
 from entities.ProductClass import Product
+from utils.for_imgs import download_image
 
 
 def get_soup_from_url(url: str):
@@ -14,11 +15,11 @@ def get_soup_from_url(url: str):
 
 def scraping(markets, urls, collections_names, categories_to_scrap_dict):
     counter = 0
-    list_to_write = list()
+    # list_to_write = list()
     # Aroma, Franca, Voli
     for market in markets:
 
-        list_to_write.append("\n\n\nmarket: " + market + "\n")
+        # list_to_write.append("\n\n\nmarket: " + market + "\n")
 
         url = urls.get(market)
         collection_name = collections_names.get(market)
@@ -79,13 +80,15 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
 
 
         for url in list_all_urls:
-            currentsubcategory = url[1]
+            # currentsubcategory = url[1]
 
-            list_to_write.append("  " + "subcategory: " + currentsubcategory + "\n")
+            # list_to_write.append("  " + "subcategory: " + currentsubcategory + "\n")
 
             store_content = get_soup_from_url(url=url[0])
-            all_ok = False
-            all_ok_grid = False
+            # all_ok = False
+            # all_ok_grid = False
+            if store_content is None:
+                continue
 
             try:
                 body_additional = store_content.find_all('div', 'grid')
@@ -97,11 +100,11 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                 body_additional = store_content.find('div', 'grid')
 
             for el in body_additional:
-                title = el.find('h2', 'grid__title')
+                # title = el.find('h2', 'grid__title')
                 grid_content = el.find('div', 'grid__content')
 
-                title_of_min_group = title.text
-                list_to_write.append("      "+title_of_min_group.strip() + "\n")
+                # title_of_min_group = title.text
+                # list_to_write.append("      "+title_of_min_group.strip() + "\n")
 
                 products_in_grid_content = grid_content.find_all('div', 'tile')
 
@@ -118,11 +121,17 @@ def scraping(markets, urls, collections_names, categories_to_scrap_dict):
                     product = Product(name_to_db, price_to_db)
                     counter += 1
 
-                    insert_to_db_from_scraping(collection_name, counter, product, currentsubcategory, title_of_min_group)
+                    #
 
+                    img_el = tile.find('img', 'tile__image store-product-image')
+                    if not (img_el is None):
+                        img_url = img_el['src']
+                        if not (img_url is None):
+                            image_name = "img_name_" + str(counter) + ".jpg"
+                            download_image(img_url, image_name)
 
-    with open("file.txt", "w") as file:
-        for text in list_to_write:
-            file.write(text)
+                    #
+
+                    insert_to_db_from_scraping(collection_name, counter, product)
 
     return str(counter)
