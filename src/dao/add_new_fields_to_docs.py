@@ -2,9 +2,12 @@ import os
 
 from bson import ObjectId
 from pymongo import MongoClient
+
+from classification.peredelano_classifier_v0 import pp_classifier
 from dao.CRUD import *
 from utils.calculations import *
 from utils.get_weight import *
+# from classification.ai_classifier import classify_product
 
 
 Aroma_col = get_collection_name("fromAroma")
@@ -26,7 +29,8 @@ def update_or_add_some_fields(collection_name, doc_id, *args):
     return counter
 
 
-def add_weight_and_price_per_kg():
+def add_more_information():
+
     cursorA = Aroma_col.find()
     cursorF = Franca_col.find()
     cursorV = Voli_col.find()
@@ -39,11 +43,11 @@ def add_weight_and_price_per_kg():
         price = document["product"]["price"]
 
         weight = add_weight_field(product_name)
-
         price_per_kg = add_price_per_kg_field(price[0], weight)
+        group = add_custom_group_field_ml_ver(product_name)
 
         mod_count = update_or_add_some_fields(Aroma_col, product_id,
-                                              ["weight", weight], ["price_per_kg", price_per_kg])
+                                              ["weight", weight], ["price_per_kg", price_per_kg], ["group", group])
         check_count += mod_count
 
     for document in cursorF:
@@ -52,11 +56,11 @@ def add_weight_and_price_per_kg():
         price = document["product"]["price"]
 
         weight = add_weight_field(product_name)
-
         price_per_kg = add_price_per_kg_field(price[0], weight)
+        group = add_custom_group_field_ml_ver(product_name)
 
         mod_count = update_or_add_some_fields(Franca_col, product_id,
-                                              ["weight", weight], ["price_per_kg", price_per_kg])
+                                              ["weight", weight], ["price_per_kg", price_per_kg], ["group", group])
         check_count += mod_count
 
     for document in cursorV:
@@ -65,11 +69,11 @@ def add_weight_and_price_per_kg():
         price = document["product"]["price"]
 
         weight = add_weight_field(product_name)
-
         price_per_kg = add_price_per_kg_field(price[0], weight)
+        group = add_custom_group_field_ml_ver(product_name)
 
         mod_count = update_or_add_some_fields(Voli_col, product_id,
-                                              ["weight", weight], ["price_per_kg", price_per_kg])
+                                              ["weight", weight], ["price_per_kg", price_per_kg], ["group", group])
         check_count += mod_count
 
     return check_count
@@ -112,14 +116,11 @@ def add_custom_group_field_manual_ver(group):
 
 # ML algorithm required
 def add_custom_group_field_ml_ver(product_str):
-
-    # need to find
-    field_value = "field_value"
-
-    #
-    # magic
-    #
-
-    return field_value
+    result = pp_classifier(product_str)
+    field_value = str(result[0])
+    if field_value:
+        return field_value
+    else:
+        return "not_found"
 
 #  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #
