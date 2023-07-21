@@ -4,7 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, R
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 import json
 
-from dao.CRUD import get_database, get_collection_name
+from dao.CRUD import get_database, get_collection_name, get_products_by_group
 from dao.Users_db import get_database_users, add_user
 from entities.UserClass import User
 from utils.hash_check import hash_password, check_password
@@ -89,27 +89,130 @@ def get_product_data(product_id):
 
 @app.route('/get_arr_of_id/<what_we_need>')
 def get_the_id_we_need(what_we_need):
+    arr = []
+    if what_we_need == "cheese":
+        group_to_find1 = "hard cheese"
+        A_list1 = get_products_by_group("fromAroma", group_to_find1)
+        F_list1 = get_products_by_group("fromFranca", group_to_find1)
+        V_list1 = get_products_by_group("fromVoli", group_to_find1)
 
-    if what_we_need == "first_ten_fromAroma":
-        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        for doc in A_list1:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
+        for doc in F_list1:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
+        for doc in V_list1:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
+        group_to_find2 = "melted cheese"
+        A_list2 = get_products_by_group("fromAroma", group_to_find2)
+        F_list2 = get_products_by_group("fromFranca", group_to_find2)
+        V_list2 = get_products_by_group("fromVoli", group_to_find2)
+
+        for doc in A_list2:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
+        for doc in F_list2:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
+        for doc in V_list2:
+            current_id = doc["_id"]
+            arr.append(current_id)
+
         data = {
             "arr": arr
         }
         return jsonify(data)
 
-    if what_we_need == "first_ten_fromFranca":
-        arr = [344, 345, 346, 347, 348, 349, 350, 351, 352, 353]
-        data = {
-            "arr": arr
-        }
-        return jsonify(data)
 
-    if what_we_need == "first_ten_fromVoli":
-        arr = [566, 567, 568, 569, 570, 571, 572, 573, 574, 575]
-        data = {
-            "arr": arr
-        }
-        return jsonify(data)
+    group_to_find = what_we_need
+    A_list = get_products_by_group("fromAroma", group_to_find)
+    F_list = get_products_by_group("fromFranca", group_to_find)
+    V_list = get_products_by_group("fromVoli", group_to_find)
+
+    for doc in A_list:
+        current_id = doc["_id"]
+        arr.append(current_id)
+
+    for doc in F_list:
+        current_id = doc["_id"]
+        arr.append(current_id)
+
+    for doc in V_list:
+        current_id = doc["_id"]
+        arr.append(current_id)
+
+    data = {
+        "arr": arr
+    }
+    return jsonify(data)
+
+
+    # if what_we_need == "first_ten_fromAroma":
+    #     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    #     data = {
+    #         "arr": arr
+    #     }
+    #     return jsonify(data)
+    #
+    # if what_we_need == "first_ten_fromFranca":
+    #     arr = [344, 345, 346, 347, 348, 349, 350, 351, 352, 353]
+    #     data = {
+    #         "arr": arr
+    #     }
+    #     return jsonify(data)
+    #
+    # if what_we_need == "first_ten_fromVoli":
+    #     arr = [566, 567, 568, 569, 570, 571, 572, 573, 574, 575]
+    #     data = {
+    #         "arr": arr
+    #     }
+    #     return jsonify(data)
+
+
+@app.route('/get_titles/<what_we_need>')
+def get_titles_of_category_and_subcategory(what_we_need):
+    match what_we_need:
+        case "categories":
+            arr = ["meat", "dairy", "bakery", "fruits and vegetables"]
+            data = {
+                "arr": arr
+            }
+            return jsonify(data)
+
+        case "meat":
+            arr = ["pork", "beef", "chicken", "veal", "semi-finished products"]
+            data = {
+                "arr": arr
+            }
+            return jsonify(data)
+
+        case "dairy":
+            arr = ["milk", "cheese", "jogurt", "maslac"]
+            data = {
+                "arr": arr
+            }
+            return jsonify(data)
+
+        case "bakery":
+            arr = ["bread", "toast and packaged bread", "cakes and pastries"]
+            data = {
+                "arr": arr
+            }
+            return jsonify(data)
+
+        case "fruits and vegetables":
+            arr = ["fruits", "vegetables", "dried fruits", "nuts"]
+            data = {
+                "arr": arr
+            }
+            return jsonify(data)
 
 
 @app.route('/get_products_combined_data', methods=['GET'])
