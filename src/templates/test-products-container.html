@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Cards</title>
+</head>
+<body>
+
+<button onclick="fetchAndDisplayProducts('first_ten_fromAroma')">testAroma</button>
+
+<button onclick="fetchAndDisplayProducts('first_ten_fromFranca')">testFranca</button>
+
+<button onclick="fetchAndDisplayProducts('first_ten_fromVoli')">testVoli</button>
+
+<div id="productsContainer"></div>
+
+<script>
+
+    async function fetchAndDisplayProducts(what_we_need) {
+
+        const productsContainer = document.getElementById('productsContainer');
+        productsContainer.innerHTML = '';
+
+        const response_arr_of_id = await fetch(`/get_arr_of_id/${what_we_need}`);
+        const data_arr_of_id = await response_arr_of_id.json();
+        const arr_of_id = data_arr_of_id["arr"];
+
+        for (const currentId of arr_of_id) {
+            try {
+                const response_img = await fetch(`/get_image/${currentId}`);
+                const response_product_data = await fetch(`/get_product_data/${currentId}`)
+
+                const img_data = await response_img.blob();
+                const imageUrl = URL.createObjectURL(img_data);
+
+                const product_data = await response_product_data.json()
+                const product_name = product_data["product_name"];
+
+
+                // Создаем div-контейнер для картинки и названия
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-container';
+
+                // Создаем элемент img для отображения картинки
+                const imageElement = document.createElement('img');
+                imageElement.src = imageUrl;
+                imageElement.className = 'image';
+                productDiv.appendChild(imageElement);
+
+                // Создаем элемент для названия
+                const product_title = document.createElement('p');
+                product_title.textContent = `${product_name}`;
+                productDiv.appendChild(product_title);
+
+                productsContainer.appendChild(productDiv);
+            } catch (error) {
+                console.error(`Error fetching sth ${currentId}:`, error);
+            }
+        }
+    }
+
+</script>
+
+<style>
+    .product-container {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 5px;
+        margin: 5px;
+        max-width: 200px;
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+    }
+</style>
+
+</body>
+</html>

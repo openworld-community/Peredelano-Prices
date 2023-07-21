@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, redirect, url_for, jsonify, R
 from flask_login import LoginManager, login_user, current_user, login_required, logout_user
 import json
 
+from dao.CRUD import get_database, get_collection_name
 from dao.Users_db import get_database_users, add_user
 from entities.UserClass import User
 from utils.hash_check import hash_password, check_password
@@ -39,13 +40,118 @@ app.register_blueprint(tests_bp)
 #  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #
 
 # image_name = "img_name_" + str(counter) + ".jpg"
-# @app.route("/image/<image_name>")
-# def test_img_scrap(image_name):
-#
-#     image_data = fs.find_one({'filename': image_name}).read()
-#
-#     # Return the image data as a response
-#     return Response(image_data, content_type='image/jpeg')
+@app.route("/test-products-container")
+def test_products_container():
+
+    return render_template('test-products-container.html')
+
+
+@app.route('/get_image/<image_id>')
+def get_image(image_id):
+    try:
+        image_name = "img_name_" + str(image_id) + ".jpg"
+        image_data = fs.find_one({'filename': image_name}).read()
+        return Response(image_data, content_type='image/jpeg')
+    except gridfs.errors.NoFile:
+        return "Image not found.", 404
+
+
+@app.route('/get_product_data/<product_id>')
+def get_product_data(product_id):
+    coll_name_Aroma = get_collection_name("fromAroma")
+    coll_name_Franca = get_collection_name("fromFranca")
+    coll_name_Voli = get_collection_name("fromVoli")
+
+    docA = coll_name_Aroma.find_one({"_id": int(product_id)})
+    if docA:
+        product_name = docA['product']['name']
+        product_data = {
+            "product_name": product_name
+        }
+        return jsonify(product_data)
+
+    docF = coll_name_Franca.find_one({"_id": int(product_id)})
+    if docF:
+        product_name = docF['product']['name']
+        product_data = {
+            "product_name": product_name
+        }
+        return jsonify(product_data)
+
+    docV = coll_name_Voli.find_one({"_id": int(product_id)})
+    if docV:
+        product_name = docV['product']['name']
+        product_data = {
+            "product_name": product_name
+        }
+        return jsonify(product_data)
+
+
+@app.route('/get_arr_of_id/<what_we_need>')
+def get_the_id_we_need(what_we_need):
+
+    if what_we_need == "first_ten_fromAroma":
+        arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        data = {
+            "arr": arr
+        }
+        return jsonify(data)
+
+    if what_we_need == "first_ten_fromFranca":
+        arr = [344, 345, 346, 347, 348, 349, 350, 351, 352, 353]
+        data = {
+            "arr": arr
+        }
+        return jsonify(data)
+
+    if what_we_need == "first_ten_fromVoli":
+        arr = [566, 567, 568, 569, 570, 571, 572, 573, 574, 575]
+        data = {
+            "arr": arr
+        }
+        return jsonify(data)
+
+
+@app.route('/get_products_combined_data', methods=['GET'])
+def get_combined_data():
+    try:
+        # # cursorA = (get_collection_name("fromAroma")).find()
+        # cursorF = (get_collection_name("fromFranca")).find()
+        # # cursorV = (get_collection_name("fromVoli")).find()
+        #
+        # # хотим достать первые 10 штук с 344 по 353
+        # test_counter = 1
+        # products_data_container = []
+        # for document in cursorF:
+        #     if test_counter <= 10:
+        #         product_id = document["_id"]
+        #         product_name = document["product"]["name"]
+        #         image_name = "img_name_" + str(product_id) + ".jpg"
+        #         image_data = fs.find_one({'filename': image_name}).read()
+        #         product_data = {
+        #             "product_name": product_name,
+        #             "product_image": image_data
+        #         }
+        #         products_data_container.append(product_data)
+        #
+        # return jsonify(products_data_container)
+
+        franca_coll = get_collection_name("fromFranca")
+        query = {'_id': 344}
+        doc = franca_coll.find_one(query)
+        product_name = doc['product']['name']
+        image_name = "img_name_" + str(344) + ".jpg"
+        image_data = fs.find_one({'filename': image_name}).read()
+        resp = Response(image_data, content_type='image/jpeg')
+        product_data = {
+            "product_name": product_name,
+            "product_image": resp
+        }
+        return jsonify(product_data)
+
+    except Exception as e:
+        print('Error:', e)
+        return jsonify({'message': 'Internal Server Error'}), 500
 
 
 #  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #
