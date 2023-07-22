@@ -5,19 +5,26 @@
 </head>
 <body>
 
-<button onclick="fetchAndDisplayProducts('first_ten_fromAroma')">testAroma</button>
-<button onclick="fetchAndDisplayProducts('first_ten_fromFranca')">testFranca</button>
-<button onclick="fetchAndDisplayProducts('first_ten_fromVoli')">testVoli</button>
+{#<button onclick="fetchAndDisplayProducts('first_ten_fromAroma')">testAroma</button>#}
+{#<button onclick="fetchAndDisplayProducts('first_ten_fromFranca')">testFranca</button>#}
+{#<button onclick="fetchAndDisplayProducts('first_ten_fromVoli')">testVoli</button>#}
 
+<button onclick="send_selection()">send selection</button>
 
 <button onclick="createButtonsCategory()">open catalog</button>
+
+<div id="message"></div>
 
 <div id="categoryButtons"></div>
 
 <div id="productsContainer"></div>
 
 
+
+
 <script>
+
+    let data_user_choice = []
 
     async function createButtonsCategory() {
         const buttonsContainer = document.getElementById('categoryButtons');
@@ -76,6 +83,8 @@
 
             const product_data = await response_product_data.json()
             const product_name = product_data["product_name"];
+            const product_price_per_kg_data = product_data["price_per_kg"];
+            const product_market_data = product_data["market"];
 
 
             // Создаем div-контейнер для картинки и названия
@@ -93,12 +102,86 @@
             product_title.textContent = `${product_name}`;
             productDiv.appendChild(product_title);
 
+
+            const product_price_per_kg = document.createElement('p');
+            product_price_per_kg.textContent = `${product_price_per_kg_data}`;
+            productDiv.appendChild(product_price_per_kg);
+
+
+            const product_market = document.createElement('p');
+            product_market.textContent = `${product_market_data}`;
+            productDiv.appendChild(product_market);
+
+            {##}
+
+
+
+
+            const button = document.createElement('button');
+            button.textContent = currentId; // Устанавливаем текстовое содержимое кнопки
+            productDiv.appendChild(button);
+            button.addEventListener('click', async function() {
+                data_user_choice.push(currentId);
+            })
+
+
+
+
+            {#// Добавляем обработчик событий для карточки продукта#}
+            {#productDiv.addEventListener('click', function() {#}
+            {#    // Вызываем ваше кастомное событие (например, 'productClicked')#}
+                {#const customEvent = new CustomEvent('productClicked', { detail: { productName: product_name } });#}
+                {#document.dispatchEvent(customEvent);#}
+            {##}
+                {#        тут надо написать добавление id продукта в массив корзины        #}
+            {#    data_user_choice.append(currentId)#}
+                {#        тут надо написать добавление id продукта в массив корзины        #}
+            {#);#}
+
+            {##}
+
             productsContainer.appendChild(productDiv);
         } catch (error) {
             console.error(`Error fetching sth ${currentId}:`, error);
         }
     }
 }
+
+
+    async function send_selection(){
+        // URL адрес вашего сервера или маршрут для обработки данных на бекенде
+        const url = '/user_choice';
+
+        const dataToSend = {
+            "message": "its user choice",
+            "arr_user_choice": data_user_choice
+        }
+
+        // Опции запроса (метод, заголовки и тело запроса)
+        const options = {
+            method: 'POST', // Метод запроса (в данном случае POST для отправки данных на сервер)
+            headers: {
+                'Content-Type': 'application/json' // Заголовок Content-Type для указания типа данных (JSON)
+            },
+            body: JSON.stringify(dataToSend) // Преобразование массива в JSON-строку и установка ее как тела запроса
+        };
+
+        // Отправка запроса на сервер
+        fetch(url, options)
+            .then(response => response.json()) // Обработка ответа от сервера
+            .then(data => {
+                const messageDiv = document.getElementById('message');
+                // Обработка данных, полученных от сервера (если есть)
+                messageDiv.textContent = `Сообщение: ${data.message}, Данные: ${data.arr_user_choice.join(', ')}`;
+                console.log('Данные успешно отправлены на бекенд:', data);
+                data_user_choice = []
+            })
+            .catch(error => {
+                // Обработка ошибок при отправке запроса
+                console.error('Ошибка при отправке данных на бекенд:', error);
+            });
+    }
+
 
 </script>
 

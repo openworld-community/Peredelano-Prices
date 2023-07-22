@@ -65,24 +65,39 @@ def get_product_data(product_id):
     docA = coll_name_Aroma.find_one({"_id": int(product_id)})
     if docA:
         product_name = docA['product']['name']
+        product_price = docA['product']['price']
+        price_per_kg = docA['price_per_kg']
+        price_per_kg = str(price_per_kg) + " " + str(product_price[1]) + "/kg"
         product_data = {
-            "product_name": product_name
+            "product_name": product_name,
+            "price_per_kg": price_per_kg,
+            "market": "Aroma"
         }
         return jsonify(product_data)
 
     docF = coll_name_Franca.find_one({"_id": int(product_id)})
     if docF:
         product_name = docF['product']['name']
+        product_price = docF['product']['price']
+        price_per_kg = docF['price_per_kg']
+        price_per_kg = str(price_per_kg) + " " + str(product_price[1]) + "/kg"
         product_data = {
-            "product_name": product_name
+            "product_name": product_name,
+            "price_per_kg": price_per_kg,
+            "market": "Franca"
         }
         return jsonify(product_data)
 
     docV = coll_name_Voli.find_one({"_id": int(product_id)})
     if docV:
         product_name = docV['product']['name']
+        product_price = docV['product']['price']
+        price_per_kg = docV['price_per_kg']
+        price_per_kg = str(price_per_kg) + " " + str(product_price[1]) + "/kg"
         product_data = {
-            "product_name": product_name
+            "product_name": product_name,
+            "price_per_kg": price_per_kg,
+            "market": "Voli"
         }
         return jsonify(product_data)
 
@@ -98,15 +113,18 @@ def get_the_id_we_need(what_we_need):
 
         for doc in A_list1:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         for doc in F_list1:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         for doc in V_list1:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         group_to_find2 = "melted cheese"
         A_list2 = get_products_by_group("fromAroma", group_to_find2)
@@ -115,15 +133,18 @@ def get_the_id_we_need(what_we_need):
 
         for doc in A_list2:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         for doc in F_list2:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         for doc in V_list2:
             current_id = doc["_id"]
-            arr.append(current_id)
+            if doc['weight'] != "not_found":
+                arr.append(current_id)
 
         data = {
             "arr": arr
@@ -138,42 +159,23 @@ def get_the_id_we_need(what_we_need):
 
     for doc in A_list:
         current_id = doc["_id"]
-        arr.append(current_id)
+        if doc['weight'] != "not_found":
+            arr.append(current_id)
 
     for doc in F_list:
         current_id = doc["_id"]
-        arr.append(current_id)
+        if doc['weight'] != "not_found":
+            arr.append(current_id)
 
     for doc in V_list:
         current_id = doc["_id"]
-        arr.append(current_id)
+        if doc['weight'] != "not_found":
+            arr.append(current_id)
 
     data = {
         "arr": arr
     }
     return jsonify(data)
-
-
-    # if what_we_need == "first_ten_fromAroma":
-    #     arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    #     data = {
-    #         "arr": arr
-    #     }
-    #     return jsonify(data)
-    #
-    # if what_we_need == "first_ten_fromFranca":
-    #     arr = [344, 345, 346, 347, 348, 349, 350, 351, 352, 353]
-    #     data = {
-    #         "arr": arr
-    #     }
-    #     return jsonify(data)
-    #
-    # if what_we_need == "first_ten_fromVoli":
-    #     arr = [566, 567, 568, 569, 570, 571, 572, 573, 574, 575]
-    #     data = {
-    #         "arr": arr
-    #     }
-    #     return jsonify(data)
 
 
 @app.route('/get_titles/<what_we_need>')
@@ -215,46 +217,7 @@ def get_titles_of_category_and_subcategory(what_we_need):
             return jsonify(data)
 
 
-@app.route('/get_products_combined_data', methods=['GET'])
-def get_combined_data():
-    try:
-        # # cursorA = (get_collection_name("fromAroma")).find()
-        # cursorF = (get_collection_name("fromFranca")).find()
-        # # cursorV = (get_collection_name("fromVoli")).find()
-        #
-        # # хотим достать первые 10 штук с 344 по 353
-        # test_counter = 1
-        # products_data_container = []
-        # for document in cursorF:
-        #     if test_counter <= 10:
-        #         product_id = document["_id"]
-        #         product_name = document["product"]["name"]
-        #         image_name = "img_name_" + str(product_id) + ".jpg"
-        #         image_data = fs.find_one({'filename': image_name}).read()
-        #         product_data = {
-        #             "product_name": product_name,
-        #             "product_image": image_data
-        #         }
-        #         products_data_container.append(product_data)
-        #
-        # return jsonify(products_data_container)
 
-        franca_coll = get_collection_name("fromFranca")
-        query = {'_id': 344}
-        doc = franca_coll.find_one(query)
-        product_name = doc['product']['name']
-        image_name = "img_name_" + str(344) + ".jpg"
-        image_data = fs.find_one({'filename': image_name}).read()
-        resp = Response(image_data, content_type='image/jpeg')
-        product_data = {
-            "product_name": product_name,
-            "product_image": resp
-        }
-        return jsonify(product_data)
-
-    except Exception as e:
-        print('Error:', e)
-        return jsonify({'message': 'Internal Server Error'}), 500
 
 
 #  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  ##  #
