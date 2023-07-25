@@ -1,0 +1,8 @@
+torch
+peft
+numpy
+pandas
+scikit-learn
+transformers
+joblib
+sentencepiece

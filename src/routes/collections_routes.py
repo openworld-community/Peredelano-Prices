@@ -35,3 +35,10 @@ def drop_all():
     collection_name_Voli.drop()
     collection_name_Aroma.drop()
     return "Dropped all collections"
+
+
+@collections_bp.route('/to-glovo-db')
+def to_glovo_coll():
+    result_arr = to_glovodb()
+    return "we have from all collections: " + str(result_arr[0]) \
+        + "; but full info have only: " + str(result_arr[1])

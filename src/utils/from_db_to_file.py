@@ -1,5 +1,6 @@
 import csv
 
+from dao.CRUD import get_database_glovo
 
 list_of_errors = list()
 list_to_write = list()
@@ -103,3 +104,25 @@ def to_file(tree_of_categories, list_of_group_Aroma, list_of_group_Franca, list_
 
 
     return counter
+
+
+# product_name, price_for_kg, group, market
+def to_file_for_UX():
+    db = get_database_glovo()
+    coll = db["prod_for_prod"]
+
+    cursor = coll.find()
+
+    with open('for_UX.txt', mode='w', encoding='utf-8') as file:
+        file.write("product_name -- price_per_kg -- group -- market\n\n")
+        for document in cursor:
+            product_name = document["product_name"]
+            price_per_kg = document["price_per_kg"]
+            group = document["group"]
+            market = document["market"]
+            data = "\n" + str(product_name) + " -- " + str(price_per_kg) \
+                   + " -- " + str(group) + " -- " + str(market)
+            file.write(data)
+
+
+to_file_for_UX()

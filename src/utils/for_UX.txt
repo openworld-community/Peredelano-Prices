@@ -1,0 +1,799 @@
+product_name -- price_per_kg -- group -- market
+
+
+Suva Svinjska Pecenica    Matijevic Slajs 100G -- 25.90 -- semi-finished products -- Aroma
+Suvi Svinjski Vrat 100G U Mrezi Matijevic Slajs -- 25.90 -- semi-finished products -- Aroma
+Panceta Matijevic       Slajs 150G -- 23.27 -- semi-finished products -- Aroma
+Pršuta Slajs Martex 100G -- 31.90 -- semi-finished products -- Aroma
+Suvi Vrat Martex 100G -- 24.90 -- semi-finished products -- Aroma
+Zimska salama Pik Vrbovec 100g -- 26.90 -- semi-finished products -- Aroma
+Prsut Majstor mesar lovcenski slajs 100g -- 23.90 -- semi-finished products -- Aroma
+Cajna Kobasica Matijevic Slajs 100G -- 17.90 -- semi-finished products -- Aroma
+Cajna kobasica Pik Vrbovec slajs 100g -- 26.90 -- semi-finished products -- Aroma
+Kulen Matijevic Slajs 100G -- 18.90 -- semi-finished products -- Aroma
+Kulen Topola Vp Slajs 100G -- 23.90 -- semi-finished products -- Aroma
+Kulen Goranovic slajs 100g -- 25.90 -- semi-finished products -- Aroma
+Izletnicka Salama Topola Slajs Vp 100G -- 29.90 -- semi-finished products -- Aroma
+Budimska salama Goranovic slajs 100g -- 23.90 -- semi-finished products -- Aroma
+Panona Salama Pik Vrbovec Slajs 100G -- 30.90 -- semi-finished products -- Aroma
+Zlatiborac Slajs  Čajna Kobasica 100Gr -- 22.50 -- semi-finished products -- Aroma
+Zlatiborac Slajs Goveđa Čajna kobasica 100gr -- 23.90 -- semi-finished products -- Aroma
+Zlatiborac Slajs Sudžuk 100gr -- 24.50 -- semi-finished products -- Aroma
+Zlatiborac Slajs Goveđa Ljuta kobasica 100gr -- 24.90 -- semi-finished products -- Aroma
+Zlatiborac Slajs Goveđa Salama 100gr -- 24.50 -- semi-finished products -- Aroma
+Zlatiborac Slajs Domaći Kulen 100Gr -- 23.90 -- semi-finished products -- Aroma
+Zlatiborac Slajs  Domaća Salama 100Gr -- 23.90 -- semi-finished products -- Aroma
+Cajna slajs Montella 100g -- 15.90 -- semi-finished products -- Aroma
+Budimska slajs Montella  100g -- 15.90 -- semi-finished products -- Aroma
+Kulen slajs Montella 100g -- 15.90 -- semi-finished products -- Aroma
+Sunka Dimljena Cureca Slajs 100G Pik Vrbovec -- 24.90 -- semi-finished products -- Aroma
+Sunka Cureca  Classic Pik Vrbovec Slajs 100G -- 22.90 -- semi-finished products -- Aroma
+Prsut Montstate rezani 100G -- 29.90 -- semi-finished products -- Aroma
+Prsut lovcenski Majstor mesar rezani 500g VP -- 25.98 -- semi-finished products -- Aroma
+Prsuta govedja Ovako slajs 75gr -- 42.53 -- semi-finished products -- Aroma
+Kobasica Grill Carnex tanka ljuta 230g -- 9.96 -- semi-finished products -- Aroma
+Sunka Neoplanta stijesnjena 350g -- 11.97 -- semi-finished products -- Aroma
+Sunka Carnex stijesnjena u omotu 350g -- 12.26 -- semi-finished products -- Aroma
+Sunka Goranovic mini 350g stiješnjena u omotu -- 9.40 -- semi-finished products -- Aroma
+Posebna kobasica Carnex mini 350g -- 7.11 -- semi-finished products -- Aroma
+Posebna Kobasica Gudi 300G -- 4.97 -- semi-finished products -- Aroma
+Extra posebna Perutnina Ptuj sa sirom 350g -- 5.40 -- semi-finished products -- Aroma
+Extra posebna Perutnina Ptuj 350g -- 5.29 -- semi-finished products -- Aroma
+Posebna kobasica Goranovic mini 350gr -- 7.11 -- semi-finished products -- Aroma
+Extra posebna Perutnina Ptuj 800g -- 4.81 -- semi-finished products -- Aroma
+Virsla Aia Wudy pileca formaggio 150g -- 5.27 -- semi-finished products -- Aroma
+Virsla Aia Wudy pileca classico mini 100g -- 4.90 -- semi-finished products -- Aroma
+Virsla Pipi Pileca 205G -- 6.78 -- semi-finished products -- Aroma
+Polutrajna kobasica pileca 350g -- 6.71 -- semi-finished products -- Aroma
+Grudi neoplanta pilece 350g -- 10.54 -- semi-finished products -- Aroma
+Prsa Goranovic pileca u omotu mini 350g -- 8.83 -- semi-finished products -- Aroma
+Virsla Goranovic pileca vp 800g -- 3.61 -- semi-finished products -- Aroma
+Prsa Goranovic cureca u omotu mini 350gr -- 9.40 -- semi-finished products -- Aroma
+Virsla Carnex Pileca 205G -- 6.78 -- semi-finished products -- Aroma
+Virsla Carnex delikates 205g -- 6.29 -- semi-finished products -- Aroma
+Rostiljska kobasica Carnex 280g -- 8.54 -- semi-finished products -- Aroma
+Kobasica za rostilj 265g -- 8.11 -- semi-finished products -- Aroma
+Srpska kobasica Goranovic vp 300g -- 6.97 -- semi-finished products -- Aroma
+Gorska kobasica Goranovic vakum 300g -- 10.97 -- semi-finished products -- Aroma
+Srpska kobasica Carnex 310g -- 8.03 -- semi-finished products -- Aroma
+Sunka Pik u ovitku 350g -- 11.97 -- semi-finished products -- Aroma
+Zlatiborac Kobasica Grill 250gr -- 11.16 -- semi-finished products -- Aroma
+Zlatiborac Mini Pileća posebna kobasica 320gr -- 6.53 -- semi-finished products -- Aroma
+Zlatiborac Mini Delikates posebna kobasica 320gr -- 6.53 -- semi-finished products -- Aroma
+Zlatiborac Kobasica Domaćinska 290gr -- 7.76 -- semi-finished products -- Aroma
+Zlatiborac barena pileća kobasica 100gr -- 9.50 -- semi-finished products -- Aroma
+Zlatiborac TR Duvan  čvarci 150gr -- 21.93 -- semi-finished products -- Aroma
+Rostiljska kobasica  Montella 265g -- 6.00 -- semi-finished products -- Aroma
+Virsla Goranovic 250g -- 5.96 -- semi-finished products -- Aroma
+Rostiljska kobasica Carnex sa sirom 280g -- 8.54 -- semi-finished products -- Aroma
+Budimska Montella 1kg -- 9.99 -- semi-finished products -- Aroma
+Cajna Montella 1kg -- 8.99 -- semi-finished products -- Aroma
+Kulen Montella 1kg -- 9.99 -- semi-finished products -- Aroma
+Mlijeko Moja Kravica 1.5%mm 1l -- 1.59 -- milk -- Aroma
+Mlijeko Moja Kravica 2,8% 1l t baza -- 1.09 -- milk -- Aroma
+Mlijeko Moja Kravica za kafu 3,8%mm 1l -- 1.85 -- milk -- Aroma
+Mlijeko Lazine uht 2.8%mm 1l -- 1.15 -- milk -- Aroma
+Mlijeko Montella UHT 2.8%mm 1l -- 0.99 -- milk -- Aroma
+Mlijeko Moja Kravica 3.2%mm d3 sa cepom t 1l -- 1.79 -- milk -- Aroma
+Mlijeko Moja Kravica  2,8% 1l -- 1.15 -- milk -- Aroma
+Mlijeko Moja kravica junior 2.8% 1l -- 1.75 -- milk -- Aroma
+Mlijeko Moja Kravica 2.8%mm 1.5l -- 0.99 -- milk -- Aroma
+Mlijeko svjeze Srna pasterizovano 1L -- 0.99 -- milk -- Aroma
+Mlijeko cokoladno moja kravica 1% 0,5L PET -- 2.78 -- milk -- Aroma
+Mlijeko cokoladno Moja Kravica 1%mm pet 1l -- 1.69 -- milk -- Aroma
+Proteinski napitak jagoda Zbregov 0,5L PET -- 5.18 -- jogurt -- Aroma
+Proteinski napitak vanila Zbregov 0,5L PET -- 5.18 -- jogurt -- Aroma
+Mlijeko cokoladno Moja Kravica 1% 1.50L TB -- 1.79 -- milk -- Aroma
+Cokoladno Mlijeko Moja Kravica 1%Mm 0,3L -- 3.17 -- milk -- Aroma
+Protein Sejk Cokolada '330Ml Pet -- 4.39 -- vegetables -- Aroma
+Protein Sejk Jagoda '330Ml Pet -- 4.39 -- vegetables -- Aroma
+Protein Sejk Vanila '330Ml Pet -- 4.39 -- vegetables -- Aroma
+Milksejk Vanila 235ml -- 3.62 -- vegetables -- Aroma
+Milksejk Jagoda 235ml -- 3.62 -- vegetables -- Aroma
+Proteinski napitak  pistaci  0.5L Zbregov -- 5.18 -- jogurt -- Aroma
+Sir Mozzarella pizzotella 250gr -- 18.20 -- hard cheese -- Aroma
+Drmilk Unikatos Punomasni Meki Sir U Sal. 165G/150G -- 11.45 -- hard cheese -- Aroma
+Drmilk Unikatos Punomasni Meki Sir U Sal. 260G/240G -- 9.96 -- hard cheese -- Aroma
+Drmilk Unikatos Punomasni Meki Sir U Sal. 500G/450G -- 6.98 -- hard cheese -- Aroma
+Sir feta Somborska Mljekara pp 250g -- 9.96 -- hard cheese -- Aroma
+Sir Feta Mljekara Sabac  '45%Mm 450G -- 12.64 -- hard cheese -- Aroma
+Sir feta Mljekara Sabac 45%mm 250g -- 10.36 -- hard cheese -- Aroma
+Sir Parmezan Zanetti Ribani 80G -- 27.38 -- hard cheese -- Aroma
+Sir parmezan Parmonia Zanneti ribani 40g -- 27.25 -- hard cheese -- Aroma
+Sir grana padano Zanetti 200g -- 28.95 -- hard cheese -- Aroma
+Sir edamer Bayernland 1kg -- 7.49 -- hard cheese -- Aroma
+Sir gauda Bayernland 1kg -- 7.49 -- hard cheese -- Aroma
+Sir Džiugas 180G Vac, 12M -- 21.06 -- hard cheese -- Aroma
+Sir Džiugas 180G, 12Mj -- 21.06 -- hard cheese -- Aroma
+Sir Tylzycki 150G  Mlekovita -- 15.27 -- hard cheese -- Aroma
+Sir Gauda 150G Mlekovita -- 15.27 -- hard cheese -- Aroma
+Topljeni Sir Zdenka Sa Sunkom Namazni 140G -- 13.50 -- melted cheese -- Aroma
+Drmilk Sirni Namaz Sireto Paradajz Bosiljak 150G -- 9.93 -- melted cheese -- Aroma
+Drmilk Sirni Namaz Sireto Baštensko Bilje 150G. -- 9.93 -- melted cheese -- Aroma
+Drmilk Sirni Namaz Sireto Pečurke 150G. -- 9.93 -- melted cheese -- Aroma
+Drmilk Sirni Namaz Sireto Naturalni 150G. -- 9.93 -- melted cheese -- Aroma
+Dr.Milk Kajmak Namaz 150G -- 9.93 -- melted cheese -- Aroma
+Dr.Milk Kajmak Namaz 250G -- 6.76 -- melted cheese -- Aroma
+Sirni namaz Sirko 100g -- 12.90 -- melted cheese -- Aroma
+Sirni namaz ABC 200g -- 12.95 -- melted cheese -- Aroma
+Sirni namaz Ala Kajmak 250g -- 13.16 -- melted cheese -- Aroma
+Sirni namaz ABC Belje 100g -- 14.50 -- melted cheese -- Aroma
+Sirni Namaz Belje Abc Krem Junior 100G -- 13.90 -- melted cheese -- Aroma
+Topljeni Sir Zdenka Specijal Namazni 140G -- 13.50 -- melted cheese -- Aroma
+Topljeni sir Zdenka classic namazni 280g -- 16.75 -- melted cheese -- Aroma
+Sirni Namaz Sirko Povrce '55% 150G -- 11.67 -- melted cheese -- Aroma
+Sirni Namaz Sirko Urnebes 55% 150G -- 11.67 -- melted cheese -- Aroma
+Topljeni sir Zdenka plava namazni 140g -- 13.50 -- melted cheese -- Aroma
+Kajmak President Mladi 250G -- 19.00 -- semi-finished products -- Aroma
+Kajmak President Mladi 100G -- 22.90 -- semi-finished products -- Aroma
+Jogurt GUSTI 2,8%mm900g Moja kravica -- 1.77 -- jogurt -- Aroma
+Jogurt Montella 2,8% m.m 180g -- 1.61 -- jogurt -- Aroma
+Jogurt Balans+ imuno TT 1KG -- 1.75 -- jogurt -- Aroma
+Jogurt Balans+Fermentisan Proizvod Tt 1% 330G -- 2.39 -- jogurt -- Aroma
+Jogurt Grekos Jagoda'400Gr Casa -- 3.47 -- jogurt -- Aroma
+Jogurt Moja Kravica 2,8%mm 250ml pet -- 2.76 -- jogurt -- Aroma
+Jogurt Moja Kravica 2.8%mm 180ml casa -- 1.94 -- jogurt -- Aroma
+Jogurt Moja Kravica 2.8%mm 1L tt -- 1.35 -- jogurt -- Aroma
+Jogurt Lazine 3.4%mm 1l pet -- 1.65 -- jogurt -- Aroma
+Jogurt Lazine 3.4%mm 180ml casa -- 1.61 -- jogurt -- Aroma
+Jogurt Lazine 3.4%mm 1.5l -- 1.30 -- jogurt -- Aroma
+Jogurt Srna 3,2% mm 1,5l -- 1.13 -- jogurt -- Aroma
+Jogurt Srna 180ml casa -- 1.61 -- jogurt -- Aroma
+Jogurt Srna 1l -- 1.29 -- jogurt -- Aroma
+Jogurt Moja Kravica 2,8%mm 500ml pet -- 1.78 -- jogurt -- Aroma
+Jogurt Grekos 9%mm 400g casa -- 4.47 -- jogurt -- Aroma
+Jogurt Grekos 9%mm 150g casa -- 6.60 -- jogurt -- Aroma
+Jogurt Balans+ 250ml pet -- 3.00 -- jogurt -- Aroma
+Jogurt Balans+ 500ml pet -- 1.98 -- jogurt -- Aroma
+Jogurt Balans+ 1l -- 1.69 -- jogurt -- Aroma
+Jogurt Srna dijet 1l -- 1.29 -- jogurt -- Aroma
+Jogurt Lazine dijetalni 0.5%mm 1l pet -- 1.45 -- jogurt -- Aroma
+Kisjelo Mlijeko 700Ml 45% Mm Pljevaljsko Rm -- 1.79 -- jogurt -- Aroma
+Kisjelomlijeko Srna 3,2mm tegla 680g -- 1.99 -- vegetables -- Aroma
+Kisjelo mlijeko Srna sa min 3.2%mm 1KG -- 1.59 -- jogurt -- Aroma
+Kisjelo mlijeko casa Montella 180 g -- 1.61 -- jogurt -- Aroma
+Kisjelo mlijeko Drezga domace 750ml -- 1.80 -- jogurt -- Aroma
+Kisjelo mlijeko Moja Kravica 2,8%mm 180ml casa -- 1.94 -- jogurt -- Aroma
+Kisjela pavlaka Montella 20%mm 180g -- 3.06 -- semi-finished products -- Aroma
+Pavlaka kisjela Moja Kravica 20%mm 700g -- 2.84 -- milk -- Aroma
+Pavlaka kisjela Moja Kravica 12%mm 700g -- 3.27 -- milk -- Aroma
+Pavlaka kisjela Moja Kravica 20%mm 180g casa -- 4.39 -- semi-finished products -- Aroma
+Pavlaka kisjela Moja Kravica 20%mm 400g -- 3.88 -- milk -- Aroma
+Kefir Vindija 3,5%mm 330g -- 2.88 -- jogurt -- Aroma
+Jogurt Balans Kefir 3,2%  Fermentisani Proizvod 1Kg -- 2.09 -- jogurt -- Aroma
+Kefir 3,5%mm Zbregov  1000ml -- 2.19 -- jogurt -- Aroma
+Kefir Vindjija 0,9%mm 200ml -- 3.45 -- jogurt -- Aroma
+Paprika u pavlaci sjeckan 70%mm 250gr -- 10.76 -- vegetables -- Aroma
+Vocni jogurt Jogobella 400g -- 4.47 -- jogurt -- Aroma
+Vocni jogurt Zottis fruit frucht 115g -- 4.26 -- jogurt -- Aroma
+Vocni jogurt Zottis fruit frucht 150g -- 4.33 -- jogurt -- Aroma
+Vocni jogurt Zottis fruit frucht 400g -- 3.23 -- jogurt -- Aroma
+Vocni Jogurt Dukatos Jogurt Badem Pistaci 150G -- 7.27 -- nuts -- Aroma
+Vocni jogurt Jogobella musli jagoda banana 200g -- 4.45 -- jogurt -- Aroma
+Vocni jogurt Grekos sumsko voce 150g casa -- 5.67 -- jogurt -- Aroma
+Vocni Jogurt Jogood Jagoda Pet 3.2%Mm 330G -- 2.88 -- jogurt -- Aroma
+Vocni Jogurt Jogood Kajsija Pet 3.2%Mm 330G -- 2.88 -- jogurt -- Aroma
+Vocni Jogurt Dukatos Crna Ribizla Cimet 150G -- 7.27 -- jogurt -- Aroma
+Pavlaka Hulala biljna 1L -- 4.59 -- vegetables -- Aroma
+Meggle Creme Patisserie 500ml -- 5.18 -- vegetables -- Aroma
+Meggle Creme Patisserie 1000ml -- 4.65 -- vegetables -- Aroma
+Slag Krem Polimark 500Ml -- 4.58 -- vegetables -- Aroma
+Pavlaka Gran Cucina Biljna Nezasladjena 200Ml -- 6.95 -- semi-finished products -- Aroma
+Pavlaka Gran Cucina biljna nezasladjena 500ml -- 5.18 -- semi-finished products -- Aroma
+Pavlaka Hulala Biljna Za Kolace I Sladolede 200Ml -- 7.45 -- vegetables -- Aroma
+Pavlaka Hulala biljna za  kolace i sladolede 500ml -- 5.38 -- vegetables -- Aroma
+Slag Krem Polimark 200Ml -- 4.25 -- vegetables -- Aroma
+Vrhnje  za kuvanje Dukat  500g -- 6.58 -- vegetables -- Aroma
+Meggle Pavlaka za kuvanje 10%mm 500ml -- 5.18 -- vegetables -- Aroma
+Krem za kuvanje Polimark 200ml -- 4.95 -- vegetables -- Aroma
+Krem za kuvanje Polimark 1l -- 3.89 -- vegetables -- Aroma
+Vrhnje za kuvanje Dukat 200g -- 7.45 -- vegetables -- Aroma
+Pavlaka za kuvanje Moja Kravica 20%mm 500ml tb -- 3.98 -- milk -- Aroma
+Meggle Pavlaka za kuvanje 20%mm 500ml -- 5.38 -- vegetables -- Aroma
+Kinder Chocofresh 41g -- 28.05 -- vegetables -- Aroma
+Mlijecni desert Zoot cokolada ljesnik 55gr -- 11.82 -- nuts -- Aroma
+Mlijecni dezert Milka choco snack 32g -- 26.56 -- vegetables -- Aroma
+Mlijecni desert Monte maxi 100g -- 10.90 -- vegetables -- Aroma
+Mlijecni desert Cipiripi  4x100g -- 6.90 -- vegetables -- Aroma
+Mlijecni desert Dukatino cokolada ljesnik 4x62,5g -- 34.40 -- nuts -- Aroma
+Puding Zottis vanila 115g -- 4.78 -- vegetables -- Aroma
+Puding desert Choco Loco 4X125g -- 18.80 -- vegetables -- Aroma
+Puding desert Zottis schoko 115g -- 4.78 -- vegetables -- Aroma
+Protein vocni jogurt Zott 200g -- 7.25 -- jogurt -- Aroma
+Protein puding vanila Zott 200g -- 7.25 -- vegetables -- Aroma
+Protein puding cokolada  Zott 200g -- 7.25 -- vegetables -- Aroma
+Kruska viljamovka  1 kg -- 4.19 -- fruits -- Aroma
+Jabuka zlatni delises uvoz 1 kg -- 1.69 -- fruits -- Aroma
+Jabuka zelena greny uvoz 1 kg -- 1.29 -- fruits -- Aroma
+Jabuka ajdara poljska 1 kg -- 1.09 -- fruits -- Aroma
+Banana I klasa 1 kg -- 1.79 -- fruits -- Aroma
+Grozdje bijelo 1 kg -- 3.49 -- dried fruits -- Aroma
+Grejfrut crveni 1 kg -- 1.99 -- fruits -- Aroma
+Pomorandza 1 kg -- 1.79 -- fruits -- Aroma
+Limun 1 kg -- 1.89 -- fruits -- Aroma
+Luk crveni 1 kg -- 1.69 -- vegetables -- Aroma
+Tikvica NB 1 kg -- 1.25 -- vegetables -- Aroma
+Karfiol 1 kg -- 2.89 -- vegetables -- Aroma
+Paprika babura 1 kg -- 1.39 -- vegetables -- Aroma
+Tikvica 1 kg -- 0.99 -- vegetables -- Aroma
+Sargarepa 1 kg -- 1.59 -- vegetables -- Aroma
+Patlidzan 1 kg -- 0.95 -- vegetables -- Aroma
+Sampinjoni 1 kg -- 1.99 -- vegetables -- Aroma
+Paradajz 1 kg -- 1.79 -- vegetables -- Aroma
+Paprika silja crvena 1 kg -- 2.49 -- vegetables -- Aroma
+Urma J&J Company 500g -- 4.90 -- dried fruits -- Aroma
+Kikiriki vakum SARS 400g -- 7.12 -- dried fruits -- Aroma
+Brusnica 200g Sars kadica -- 20.45 -- dried fruits -- Aroma
+Mix healt Sars 250g -- 14.76 -- dried fruits -- Aroma
+Mix fit Sars 250g badem,brusnica i grozdje -- 15.80 -- dried fruits -- Aroma
+Badem 250 gr kadica Sars -- 18.20 -- nuts -- Aroma
+Hljeb 7 zrna rezani   tvojih 5 minuta 450g -- 2.56 -- toast and packaged bread -- Aroma
+Tost hljeb tvojih 5minuta classic 500g -- 3.70 -- toast and packaged bread -- Aroma
+Tost hljeb sa sjemenkama 500gr -- 3.90 -- toast and packaged bread -- Aroma
+Hljeb tost integrale sa  maslinovim uljem 500g -- 3.98 -- toast and packaged bread -- Aroma
+Hljeb obogacen Tonus 300g -- 6.17 -- toast and packaged bread -- Aroma
+Hljeb integralni Roberto 400g -- 3.98 -- toast and packaged bread -- Aroma
+Hljeb bijeli rezani 500gr Nase zrno -- 2.10 -- toast and packaged bread -- Aroma
+Hljeb mijesani razani rezani 400g Nase zrno -- 2.38 -- toast and packaged bread -- Aroma
+Tost Conad 18pcs 330g -- 3.61 -- toast and packaged bread -- Aroma
+Tost hljeb Conad pane bauletto bijeli 400g -- 3.47 -- toast and packaged bread -- Aroma
+Barilla hljeb Gran  Bauletto Rustico 500gr -- 7.38 -- toast and packaged bread -- Aroma
+Tost hljeb Conad Integralni pane con 400gr -- 3.47 -- toast and packaged bread -- Aroma
+Barilla hljeb Pan Bauletto Integrale 400gr -- 4.22 -- toast and packaged bread -- Aroma
+Barilla tost Pan Carre'Fioco 430gr -- 4.40 -- toast and packaged bread -- Aroma
+Barilla tost Pan Carre'Fioco 285gr -- 5.79 -- toast and packaged bread -- Aroma
+Barilla hljeb Cuor di Lino 400gr -- 8.47 -- toast and packaged bread -- Aroma
+Hljeb integralni rezani Don Don 500g -- 2.30 -- toast and packaged bread -- Aroma
+Hljeb rezani bijeli 500G Don Don sa susamom -- 2.50 -- toast and packaged bread -- Aroma
+Stanglice Tonus beskvasne 120g -- 10.42 -- toast and packaged bread -- Aroma
+Plocice Tonus integralne sa lanom 120g -- 10.42 -- toast and packaged bread -- Aroma
+Barilla dvopek Dorate 315gr -- 9.81 -- toast and packaged bread -- Aroma
+Barilla dvopek Integrale 315gr -- 9.81 -- toast and packaged bread -- Aroma
+Dvopek Conad Sa Zitaricama 39Kom 315G -- 5.56 -- toast and packaged bread -- Aroma
+Dvopek Conad 39 kriski 324g -- 5.52 -- toast and packaged bread -- Aroma
+Hljeb bijeli Inpek sa  susamom 350g S.360 N -- 2.43 -- bread -- Aroma
+Baget Aroma 110g S.120 -- 5.00 -- bread -- Aroma
+Baget rustik sa heljdom Aroma 120g S.130 -- 5.75 -- bread -- Aroma
+Hljeb osnovni bijeli Inpek 500g -- 1.60 -- bread -- Aroma
+Hljeb tamni sa više zrna Aroma 420g s420 -- 3.69 -- bread -- Aroma
+Baget francuski Aroma 250g S.280 -- 3.96 -- bread -- Aroma
+Baget tamni Aroma 240g S.270 -- 5.21 -- bread -- Aroma
+Cabata maxi Aroma 300g S.335 -- 3.30 -- bread -- Aroma
+Hljeb farmerski Aroma 420g S.420 -- 3.31 -- bread -- Aroma
+Hljeb bijeli Aroma 420g S.420 -- 3.07 -- bread -- Aroma
+Hljeb sa vise zrna Aroma 420g S.420 -- 3.69 -- bread -- Aroma
+Lisnato pecivo Gourmand   cokolada vanila 75g  S.85 -- 10.53 -- vegetables -- Aroma
+Krofna sa coko prelivom Aroma 56g S.56 -- 12.32 -- bread -- Aroma
+Krosan Gourmand maslac marelica 80g  S.90 -- 9.38 -- maslac -- Aroma
+Kroasan Gourmand maslac sa sjemenkama 70g  S.80 -- 11.29 -- maslac -- Aroma
+Kroasan Gourmand maslac praline 75g  S.90 -- 8.67 -- maslac -- Aroma
+Kroasan maslac zakrivljen gourmand 70g S.70 -- 7.00 -- maslac -- Aroma
+Pecivo duo sir mini pani  60g s65 -- 10.83 -- hard cheese -- Aroma
+Rol virsla Inpek 110g S 120G -- 9.55 -- semi-finished products -- Aroma
+Trougao sa sirom Jami  170g  S200 -- 8.76 -- semi-finished products -- Aroma
+Trougao sa mesom Jami  170g  S200 -- 8.76 -- vegetables -- Aroma
+Pita sa spanacem 170g S.200 Alfa posno -- 8.18 -- vegetables -- Aroma
+Pita Don Don sa krompirom 90g   S.100 -- 7.67 -- vegetables -- Aroma
+Pita Don Don kukuruzna sa sirom 90g  S.110 -- 8.78 -- semi-finished products -- Aroma
+Pita Jami krompirusa delikates 130g s150 -- 7.31 -- semi-finished products -- Aroma
+Pita Jami zeljanica 130g   S.150 -- 6.54 -- vegetables -- Aroma
+Pita Jami sirnica 130g   S.150 -- 6.54 -- vegetables -- Aroma
+Pita Jami zeljanica  sa heljdom 130g  S.150 -- 9.62 -- vegetables -- Aroma
+Pita Jami sirnica  sa heljdom 130g  S.150 -- 9.62 -- vegetables -- Aroma
+Burek Jami sa krompirom 200g  S.250 -- 7.45 -- vegetables -- Aroma
+Burek Jami sa zeljem 200g   S.250 -- 7.95 -- vegetables -- Aroma
+Burek Jami sa sirom  200g   S.250 -- 7.95 -- semi-finished products -- Aroma
+Krofna sa jagoda prelivom Aroma 56g S.56 -- 12.32 -- bread -- Aroma
+Kolac Miranis jadro stangle pakovani 500g -- 8.58 -- cakes and pastries -- Aroma
+Kolac Miranis crnogorska pita pakovani 600g -- 7.82 -- cakes and pastries -- Aroma
+Kolac Miranis domaci miks pakovani 500g -- 8.58 -- cakes and pastries -- Aroma
+Rolat cokoladni 500g Miranis -- 9.78 -- cakes and pastries -- Aroma
+Rolat Orah 500g Miranis -- 9.78 -- nuts -- Aroma
+Podloga za pizzu Aly 27cm 4 kom 440g -- 7.16 -- vegetables -- Aroma
+Podloge Uniprom za picu 2x100g -- 8.50 -- vegetables -- Aroma
+Podloge Tonus za pizzu 200g -- 5.25 -- toast and packaged bread -- Aroma
+Kore Uniprom za pitu tanke 500G -- 3.98 -- vegetables -- Aroma
+Kore Inpek za pitu 500g -- 3.50 -- bread -- Aroma
+Kore Trivit od heljdinog brasna 500g -- 4.10 -- cakes and pastries -- Aroma
+Njoke 500g Mazza -- 3.58 -- vegetables -- Aroma
+Njoke Il Pastaio od krompira 500g -- 4.78 -- vegetables -- Aroma
+Tortelini Aurelia sa curetinom 250g -- 11.96 -- vegetables -- Aroma
+Tortelini Aurelia 4 vrste sira 250g Aurelia -- 12.36 -- vegetables -- Aroma
+Tortilja Aly Flour 25cm 6kom 390g -- 7.56 -- vegetables -- Aroma
+Tortilja Aly Flour 25cm 10kom 650gr -- 4.14 -- vegetables -- Aroma
+Tortilja Roberto granpiada classica 330g -- 4.70 -- vegetables -- Aroma
+Tortilja Aly Flour 30cm  10 kom 900g -- 5.28 -- vegetables -- Aroma
+Hljeb Don don mijesani ražani rezani 400gr -- 2.12 -- toast and packaged bread -- Franca
+Hljeb Don don mlinarev crni rezani 500gr -- 1.70 -- toast and packaged bread -- Franca
+Hljeb Meksički  sa kukuruznim brašnom 400 g -- 3.12 -- toast and packaged bread -- Franca
+HLEB INTEGR.REZANI 500G -- 2.58 -- toast and packaged bread -- Franca
+Prezle Omega 200g -- 2.95 -- vegetables -- Franca
+Prezla  Eko-Pek 200g -- 2.25 -- vegetables -- Franca
+Prezla Uniprom 200gr -- 2.95 -- vegetables -- Franca
+Tost Barilla Pan Care 430g -- 7.63 -- toast and packaged bread -- Franca
+Toast classic 500gr -- 2.98 -- vegetables -- Franca
+Toast with seeds 500gr -- 3.18 -- vegetables -- Franca
+Halva cacao 100gr -- 8.50 -- cakes and pastries -- Franca
+Kolač Jadro Štangla 500g -- 7.78 -- cakes and pastries -- Franca
+Kolač Oraščići 500g -- 6.18 -- vegetables -- Franca
+Štrudla trivit sa makom 110g -- 9.91 -- cakes and pastries -- Franca
+Juneća roštilj kobasica 200 gr -- 6.25 -- semi-finished products -- Franca
+Podlovćenski pršut komad 1kg -- 11.99 -- fruits -- Franca
+Podlovćenski pršut sjeckani 100gr -- 59.90 -- semi-finished products -- Franca
+Suva goveđa pršuta Franca 100 gr -- 26.90 -- semi-finished products -- Franca
+Suva goveđa pršuta 100 gr -- 157.90 -- semi-finished products -- Franca
+Škembići u paradajz sosu 400gr -- 5.47 -- vegetables -- Franca
+Mlijeko Imlek steriliziovano 1,5L -- 1.43 -- milk -- Franca
+Mlijeko Imlek  Kravica 0.5L -- 6.28 -- milk -- Franca
+Mlijeko Imlek  Moja Kravica  sa čepom 0.5L -- 2.90 -- milk -- Franca
+Jogurt FML  gusti 1,5 kg -- 1.26 -- jogurt -- Franca
+Coffee AMA iced  cappuccino 0.25l -- 5.96 -- vegetables -- Franca
+Coffee AMA iced  macchiato 0.25l -- 5.96 -- vegetables -- Franca
+Coffee Landessa latte macchiato 0,23ml -- 5.61 -- vegetables -- Franca
+Jogurt Imlek 2.8%mm 1l -- 1.55 -- jogurt -- Franca
+Jogurt Imlek  2,8% 1,5 L. -- 1.33 -- jogurt -- Franca
+Jogurt Imlek GUSTI Moja Kravica 2.8%mm 900g -- 1.61 -- jogurt -- Franca
+Mlijeko Imlek kisjelo  2.8% 180g -- 1.94 -- jogurt -- Franca
+Jogurt Imlek mk gusti  2,8mm 1,5 kg -- 1.33 -- jogurt -- Franca
+Jogurt Kravica 2.8% 500g -- 4.56 -- jogurt -- Franca
+Jogurt Lazine pitko 2,8%mm 1,5kg -- 1.26 -- jogurt -- Franca
+Jogurt  Imlek  čaša 2.8% 180g -- 1.94 -- jogurt -- Franca
+Jogurt Srna 3.2% 0.5l -- 4.48 -- jogurt -- Franca
+Jogurt Srna čašica  3.2% 0.18l -- 1.94 -- jogurt -- Franca
+Jogurt Srna 3.2%mm 1.5kg -- 1.30 -- jogurt -- Franca
+Jogurt Srna  dijet obran do 0.9%mm 1l -- 1.45 -- jogurt -- Franca
+Jogurt voćni  Campina fruttis mijesano voće 125gr -- 4.40 -- jogurt -- Franca
+Jogurt voćni Campina fruttis mijesano voće 4x125gr -- 3.60 -- jogurt -- Franca
+Jogurt voćni Zott jogobela 150gr -- 3.93 -- jogurt -- Franca
+Voćni jogurt Jogood jagoda 330g -- 3.30 -- jogurt -- Franca
+Voćni jogurt Jogood šumsko voće 330g -- 3.30 -- jogurt -- Franca
+Voćni jogurt Jogood Visnja 330g -- 1.67 -- jogurt -- Franca
+Jogurt Imlek Balans 1,5 L -- 0.93 -- jogurt -- Franca
+Jogurt Imlek Balans + 250gr -- 17.00 -- jogurt -- Franca
+Jogurt Imlek Balans+1.00L -- 2.69 -- jogurt -- Franca
+Jogurt Lazine Vitko 1% mm. 1.5 kg., -- 1.33 -- jogurt -- Franca
+Kefir 300g -- 3.50 -- jogurt -- Franca
+Mlijeko FML kisjelo  3.2%mm 180gr -- 1.94 -- milk -- Franca
+Pavlaka Imlek  20% 0.7L -- 3.50 -- vegetables -- Franca
+Pavlaka Imlek  kravica 20%mm 0.18L -- 4.17 -- milk -- Franca
+Pavlaka Lazine Kisjela  20% 180gr -- 3.28 -- vegetables -- Franca
+Pavlaka Lazinekisjela 20% 1000ml -- 2.65 -- vegetables -- Franca
+Krem za kuvanje 500ml -- 5.68 -- vegetables -- Franca
+Vrhnje za kuhanje  500gr -- 6.96 -- vegetables -- Franca
+Majonez De Gusto  delikates 500ml -- 3.30 -- semi-finished products -- Franca
+Majonez Dijamant  Classic dojpak 285ml -- 5.44 -- maslac -- Franca
+Majonez del.boca 500 ml -- 5.30 -- vegetables -- Franca
+Majonez delikates dojpak 300ml -- 4.63 -- semi-finished products -- Franca
+Majonez delikates kesa 50g -- 5.00 -- semi-finished products -- Franca
+Majonez delikates kesa 200ml -- 6.00 -- semi-finished products -- Franca
+Majonez Majovita dojpak delikates  270ml -- 7.37 -- semi-finished products -- Franca
+Majonez Thomy  delikates 20g -- 14.50 -- semi-finished products -- Franca
+Majonez Thomy doypack 12x280ml -- 1.96 -- vegetables -- Franca
+Tartar sos kesica 45ml -- 5.56 -- vegetables -- Franca
+Margarin Dijamant dobro jutro dijet 250g -- 3.96 -- maslac -- Franca
+Margarin Dijamant dobro jutro mliječni 250g -- 4.36 -- maslac -- Franca
+Margarin Dijamant stoni  classic 250gr -- 7.40 -- maslac -- Franca
+Margarin Dijamant stoni dijavit 250GR -- 3.56 -- maslac -- Franca
+Margarin Vital  Stoni 250GR -- 4.36 -- maslac -- Franca
+Maslac Imlek  125g -- 21.52 -- maslac -- Franca
+Maslac Imlek  200gr -- 19.95 -- maslac -- Franca
+Maslac Klikovac Biser 200gr -- 19.25 -- maslac -- Franca
+Puding Campina pudis  vanila 125gr -- 3.12 -- vegetables -- Franca
+Puding Pudis čokolada  4*125gr -- 3.12 -- vegetables -- Franca
+Puding Zott Zottis desert 115g -- 3.91 -- vegetables -- Franca
+Puding Zott Zottis vanila dessert 115g -- 3.91 -- vegetables -- Franca
+Vočni jogurt Zott Zottis fruit 115g -- 3.39 -- jogurt -- Franca
+Desert čoko Dukatino lješnik  4x62,5g -- 28.00 -- vegetables -- Franca
+Jogurt voćni Zott Jogobela classic 400gr. -- 3.73 -- jogurt -- Franca
+Jogurt Dukatos natur 150g -- 5.93 -- jogurt -- Franca
+Desert Kinder Pingui 30gr -- 26.33 -- vegetables -- Franca
+Desert Zott Monte čokolada 55gr -- 10.00 -- vegetables -- Franca
+Badem 80g -- 24.88 -- nuts -- Franca
+Badem 250gr -- 19.96 -- nuts -- Franca
+Urma bk 180gr -- 4.17 -- dried fruits -- Franca
+Kajsija suva 200gr -- 17.45 -- dried fruits -- Franca
+Ljesnik 80gr -- 86.00 -- nuts -- Franca
+Suvo voće  J&J  Classic mix 80 gr -- 7.38 -- dried fruits -- Franca
+Pistaćije Mogyi  pržene, slane 60gr -- 37.50 -- vegetables -- Franca
+Mljeveno meso 1kg  (24674) -- 6.29 -- beef -- Voli
+Ćevapi 1kg  (24675) -- 6.29 -- vegetables -- Voli
+Pljeskavice 1kg  (24676) -- 6.29 -- semi-finished products -- Voli
+Roštiljska kobasica 1kg  (24677) -- 6.29 -- semi-finished products -- Voli
+Svinjska pančeta 1kg  (24668) -- 6.49 -- pork -- Voli
+Svinjski but bez kosti uvoz 1kg  (155329) -- 5.79 -- pork -- Voli
+Svinjska plećka bez kosti uvoz 1kg  (155330) -- 5.69 -- pork -- Voli
+Svinjski vrat bez kosti uvoz 1kg  (155331) -- 6.79 -- pork -- Voli
+Svinjski laks kare uvoz 1kg  (155332) -- 6.59 -- pork -- Voli
+Svinjski but bez kosti domaći Farma Spuž 1kg  (169476) -- 5.99 -- pork -- Voli
+Svinjska plećka bez kosti domaća Farma Spuž 1kg  (169478) -- 5.89 -- pork -- Voli
+Svinjska kremenadla domaća Farma Spuž 1kg  (169479) -- 5.69 -- pork -- Voli
+Svinjski las kare domaći Farma Spuž 1kg  (169480) -- 6.69 -- pork -- Voli
+Svinjski vrat bez kosti domaci Farma Spuž 1kg  (169482) -- 6.69 -- pork -- Voli
+Juneći but bez kosti 1kg  (24632) -- 10.49 -- veal -- Voli
+Juneća plećka bez kosti 1kg  (24633) -- 8.99 -- veal -- Voli
+Juneći ramstek 1kg  (24637) -- 12.99 -- veal -- Voli
+Juneći vrat bez kosti 1kg  (60220) -- 8.99 -- beef -- Voli
+Juneće mljeveno meso 1kg  (84654) -- 6.99 -- beef -- Voli
+Pileći roster (svježe) Cekin 1kg  (36) -- 4.59 -- chicken -- Voli
+Pileći batak sa zabatkom (svježe) Cekin 1kg  (40) -- 5.39 -- chicken -- Voli
+Pileći file od prsiju podložak (svježe)Cekin 1kg  (47) -- 9.59 -- chicken -- Voli
+Pileći batak (svježe) Cekin 1kg  (48) -- 5.89 -- chicken -- Voli
+Pileći batak i zabatak rinfuz (svježe) Cekin 1kg  (65) -- 5.29 -- chicken -- Voli
+Pileći file od prsiju rinfuz (svježe) Cekin 1kg  (68) -- 9.59 -- chicken -- Voli
+Pileći batak sa karabatkom (svježe) Cekin 1kg  (75365) -- 4.85 -- chicken -- Voli
+Pileći batak sa karabatkom rinfuz (svježe) Cekin 1kg  (75366) -- 4.59 -- chicken -- Voli
+Pileći file od grudi rinfuz (svježe) Cekin 1kg  (75386) -- 8.29 -- chicken -- Voli
+Pile grill rinfuz-vrecica (svježe) Cekin 1kg  (135868) -- 2.89 -- chicken -- Voli
+Teleći but bez kosti 1kg  (24644) -- 15.29 -- veal -- Voli
+Teleća plećka bez kosti 1kg  (24646) -- 14.29 -- veal -- Voli
+Teleća podplecka-vrat 1kg  (24652) -- 10.59 -- veal -- Voli
+Teleći ramstek 1kg  (24656) -- 17.99 -- veal -- Voli
+File prsiju, smrznuto, Cekin 1kg  (78) -- 9.59 -- chicken -- Voli
+Pileći grill (smrznuto) Cekin 1kg  (132060) -- 2.49 -- chicken -- Voli
+Ćureći file od prsiju, pakovano, smrznuto, Vindon 1kg  (2) -- 14.89 -- chicken -- Voli
+Fileti oslića Heka 500 g My Fish (145778) -- 10.98 -- vegetables -- Voli
+Smrznuti filet lososa 200 g Finissima (147161) -- 44.95 -- vegetables -- Voli
+Smrznuto dimljeni losos slajs 200 g Finissima (147163) -- 54.95 -- semi-finished products -- Voli
+Papalina 1 kg smrznuta My fish (161495) -- 2.29 -- vegetables -- Voli
+Lignja očišćena patagonica 400 g Ledo (66728) -- 25.62 -- vegetables -- Voli
+Lignja patagonica očišćena kolutići i krakovi 400 g Ledo (123694) -- 25.62 -- vegetables -- Voli
+Ražnjići lignje i kozice skin pack 300 g Coral (177161) -- 25.63 -- vegetables -- Voli
+Rakovi očišćeni jadranski smrznuti skin pack 300 g Coral (177449) -- 19.97 -- vegetables -- Voli
+Plodovi mora skin pack 300 g Coral (177840) -- 11.63 -- vegetables -- Voli
+Panirani riblji štapić 300 g Ledo (17469) -- 9.50 -- vegetables -- Voli
+Fishburger riblje pljeskavice 250 g Esva (22393) -- 9.56 -- semi-finished products -- Voli
+Panirane riblje pljeskavice 22% smart choice 250 g Vici (24779) -- 8.36 -- semi-finished products -- Voli
+Ananas 1kg  (36983) -- 2.79 -- fruits -- Voli
+Banana 1kg  (36985) -- 1.79 -- fruits -- Voli
+Grejpfruit crveni 1kg  (36990) -- 1.89 -- fruits -- Voli
+Grozđe bijelo 1kg  (36991) -- 3.49 -- fruits -- Voli
+Grožđe crno 1kg  (36993) -- 3.99 -- vegetables -- Voli
+Jabuka Greni smit 1kg  (37002) -- 1.29 -- fruits -- Voli
+Jabuka Zlatni delišes 1kg  (37003) -- 1.49 -- fruits -- Voli
+Kruška viljamovka 1kg  (37011) -- 3.99 -- fruits -- Voli
+Limes 1kg  (37014) -- 4.29 -- vegetables -- Voli
+Limun 1kg  (37015) -- 1.89 -- fruits -- Voli
+Pomorandža 1kg  (37031) -- 1.79 -- vegetables -- Voli
+Urma svježa 550 g (118150) -- 4.16 -- dried fruits -- Voli
+Jabuka Ajdared  1kg  (135148) -- 1.09 -- fruits -- Voli
+Blitva 100g  (36913) -- 2.60 -- vegetables -- Voli
+Brokula 1kg  (36918) -- 5.29 -- vegetables -- Voli
+Cvekla 100g  (36922) -- 1.30 -- vegetables -- Voli
+Đumbir 100g  (36923) -- 6.00 -- vegetables -- Voli
+Karfiol 1kg  (36925) -- 2.89 -- vegetables -- Voli
+Bijeli luk 1kg  (36944) -- 3.79 -- vegetables -- Voli
+Luk crveni 1kg  (36947) -- 1.59 -- vegetables -- Voli
+Paprika babura 1kg  (36951) -- 1.29 -- vegetables -- Voli
+Paprika šilja crvena 1kg  (36955) -- 2.49 -- vegetables -- Voli
+Paprika šilja zelena 1kg  (36956) -- 1.59 -- vegetables -- Voli
+Paradajz 1kg  (36959) -- 1.79 -- vegetables -- Voli
+Pori luk 1kg  (36969) -- 2.49 -- vegetables -- Voli
+Rukola 100 g (36975) -- 14.90 -- vegetables -- Voli
+Šargarepa 100g  (36976) -- 1.60 -- vegetables -- Voli
+Šargarepa pakovana 1kg 1kg  (36977) -- 2.39 -- vegetables -- Voli
+Tikvica 1kg  (36980) -- 1.09 -- vegetables -- Voli
+Zelena salata 100g  (36981) -- 2.90 -- vegetables -- Voli
+Paradajz tomatino 500 g (70589) -- 6.98 -- vegetables -- Voli
+Batat slatki krompir 1kg  (109015) -- 3.59 -- vegetables -- Voli
+Povrće za supu 500 g (132053) -- 3.78 -- vegetables -- Voli
+Pasulj šareni 100g  (134964) -- 3.00 -- vegetables -- Voli
+Baby rotkvica 125 g (146672) -- 6.32 -- vegetables -- Voli
+Kesten oljušteni pečeni 150 g Maroni (174106) -- 18.60 -- vegetables -- Voli
+Naša bašta blitva 100g  (175002) -- 2.40 -- vegetables -- Voli
+Naša bašta krastavac 1kg  (175440) -- 1.29 -- vegetables -- Voli
+Šampinjoni rezani 720 ml Kočani (395) -- 4.01 -- toast and packaged bread -- Voli
+Cijeli šampinjoni 720 ml Kočani (396) -- 4.01 -- vegetables -- Voli
+Vrganj suvi 30 g Mivex Pljevlja (7135) -- 153.00 -- semi-finished products -- Voli
+Šampinjoni svježi 300 g (64685) -- 6.63 -- vegetables -- Voli
+Orah 100g  (24406) -- 7.00 -- nuts -- Voli
+Badem 100g  (37050) -- 10.00 -- nuts -- Voli
+Kukuruz kokičar 100g  (37058) -- 1.70 -- nuts -- Voli
+Sjemenke suncokreta očišćene 100g  (37060) -- 3.00 -- nuts -- Voli
+Urma suva 200 g (38559) -- 3.45 -- dried fruits -- Voli
+Suvo grožđe 100 g Dobro (95761) -- 5.90 -- dried fruits -- Voli
+Kajsija suva 200 g (110270) -- 15.95 -- dried fruits -- Voli
+Smokva suva 180 g (120888) -- 7.72 -- dried fruits -- Voli
+Suvo grožđe 200 g Premium Berny (131383) -- 5.45 -- dried fruits -- Voli
+Sušena šljiva bez koštice 200 g Premium Berny (131384) -- 12.45 -- dried fruits -- Voli
+Sušena brusnica soft 80 g Premium Berny (131385) -- 16.12 -- dried fruits -- Voli
+Urma svježa 150 g Premium Berny (131394) -- 6.60 -- dried fruits -- Voli
+Suvo grožđe 100 g Premium Berny (137383) -- 6.50 -- dried fruits -- Voli
+Sušena kajsija 150 g Premium Berny (141321) -- 18.60 -- dried fruits -- Voli
+Đumbir suvi 80 g Premium Berny (175499) -- 16.12 -- dried fruits -- Voli
+Suva šljiva bez koštice 200g Elmag (190439) -- 8.45 -- dried fruits -- Voli
+Kukuruz 425 ml Bonduelle (7262) -- 4.12 -- nuts -- Voli
+Ajvar domaći pravi 550 g Bakina tajna (10966) -- 14.27 -- vegetables -- Voli
+Ajvar domaći pravi 300 g Bakina tajna (10967) -- 16.50 -- vegetables -- Voli
+Ajvar domaći ljuti 550 g Bakina tajna (10968) -- 14.27 -- vegetables -- Voli
+Grašak 420 g Podravka (13490) -- 3.31 -- vegetables -- Voli
+Kukuruz šećerac 340 g Podravka (13501) -- 5.26 -- nuts -- Voli
+Krastavac I klasa 670 g Vitaminka (19346) -- 3.66 -- vegetables -- Voli
+Cvekla 670 g Vitaminka (19351) -- 3.87 -- vegetables -- Voli
+Miješana salata 650 g Vitaminka (19380) -- 3.62 -- vegetables -- Voli
+Ajvar blagi 690 g Vitaminka (22348) -- 6.22 -- vegetables -- Voli
+Meksički mix 500 g limenka Bonduelle (77314) -- 4.18 -- vegetables -- Voli
+Pečena paprika 680 g Dim-komerc (80926) -- 4.34 -- vegetables -- Voli
+Pečena paprika 1400 g Dim-komerc (80927) -- 3.92 -- vegetables -- Voli
+Cvekla 680 g Dim Komerc (80929) -- 2.04 -- vegetables -- Voli
+Krastavac extra 680 g Dim-Komerc (80933) -- 2.93 -- vegetables -- Voli
+Krastavac classic-kornišon  680 g Dim-Komerc (80934) -- 2.28 -- vegetables -- Voli
+Feferoni ljuti 610 g Dim-komerc (80935) -- 3.10 -- vegetables -- Voli
+Domaći blagi ajvar 290 g Mama's (82511) -- 17.21 -- vegetables -- Voli
+Mama s ajvar domaći blagi 550g (82512) -- 13.80 -- vegetables -- Voli
+Domaći ljuti ajvar 290 g  Mama's (82513) -- 17.21 -- vegetables -- Voli
+Domaći ljuti ajvar 550 g Mama's (82514) -- 13.80 -- vegetables -- Voli
+Crvena paprika fileti 680 g Dim-komerc (82868) -- 2.93 -- vegetables -- Voli
+Crvena paprika fileti 1400 g Dim-Komerc (82869) -- 2.85 -- vegetables -- Voli
+Ajvar uprženi ljuti 680 g Dim-komerc (82873) -- 3.51 -- vegetables -- Voli
+Kukuruz šećerac u zrnu 170 g Bonduelle (85834) -- 8.18 -- nuts -- Voli
+Feferoni ljuti 630 g Dobro (95742) -- 3.41 -- dried fruits -- Voli
+Krastavac 680 g Dobro (95743) -- 2.28 -- vegetables -- Voli
+Leblebija 400 g Podravka (135525) -- 3.73 -- vegetables -- Voli
+Domaći ljutenica 550 g Dims (135988) -- 8.35 -- vegetables -- Voli
+Domaći ajvar blagi 550 g Dims (142476) -- 9.98 -- vegetables -- Voli
+Domaći ajvar blagi 250 g Dims (142477) -- 11.80 -- vegetables -- Voli
+Domaći ajvar ljuti 250 g Dims (144676) -- 11.80 -- vegetables -- Voli
+Ajvar domaći blagi 550 g Dim-komerc (158466) -- 9.07 -- vegetables -- Voli
+Miješana salata 2300 g Dim-Komerc (176199) -- 2.07 -- vegetables -- Voli
+Sos bolognese 400 g Barilla (9122) -- 7.97 -- toast and packaged bread -- Voli
+Pasirani paradajz Tomatello 500 ml Nectar (10387) -- 1.98 -- vegetables -- Voli
+Suvi paradajz 280g Ponti (77906) -- 19.61 -- vegetables -- Voli
+Sos soja 150 ml Heinz (103761) -- 15.27 -- vegetables -- Voli
+Chili sos 200 ml delikates Voćar (118733) -- 9.95 -- semi-finished products -- Voli
+Mexican ljuti sos 100 ml Voćar (118735) -- 35.90 -- vegetables -- Voli
+Pomodori pelati 800 g Granoro (128331) -- 2.24 -- vegetables -- Voli
+Pomodori pelati 400 g Granoro (128332) -- 2.88 -- vegetables -- Voli
+Passata 690 g Granoro (128333) -- 2.16 -- vegetables -- Voli
+Polpa rustica 680 g Granoro (128334) -- 2.34 -- vegetables -- Voli
+Polpa 400 g Granoro (128335) -- 2.88 -- vegetables -- Voli
+Pomodorini 400 g Granoro (128336) -- 2.88 -- vegetables -- Voli
+Slatki cili sos za piletinu 290 ml Orginal Cock (170202) -- 14.79 -- vegetables -- Voli
+Sos teriyaki 250 ml Healthy boy (170213) -- 23.56 -- vegetables -- Voli
+Hoisin sause 397 g Lee Kum Kee (170222) -- 16.60 -- vegetables -- Voli
+Kečap ljuti 950 g Vital (534) -- 2.52 -- maslac -- Voli
+Kečap pica 450 g Vital (538) -- 2.78 -- maslac -- Voli
+Kečap blagi 500 g Polimark (1643) -- 3.38 -- vegetables -- Voli
+Kečap pizza 500 ml boca Polimark (1650) -- 3.50 -- semi-finished products -- Voli
+Kečap blagi 342 g Heinz (69355) -- 5.41 -- vegetables -- Voli
+Kečap blagi 570 g Heinz (69358) -- 5.07 -- vegetables -- Voli
+Kečap Junior 300 g Polimark (78562) -- 3.83 -- vegetables -- Voli
+Kečap blagi 500 g Dobro (95703) -- 2.18 -- dried fruits -- Voli
+Kečap blagi 1000 g Dobro (95704) -- 2.25 -- dried fruits -- Voli
+Kečap ljuti 342 g Heinz (130077) -- 5.41 -- vegetables -- Voli
+Masline bez košpice 935 ml Belsun Iska (13999) -- 5.23 -- vegetables -- Voli
+Masline zelene sa paprikom 720 g Dialvi (76232) -- 5.26 -- vegetables -- Voli
+Masline zelene bez koštice 680 ml Dobro (95662) -- 4.69 -- dried fruits -- Voli
+Masline crne bez košpice 370 g Iska (129893) -- 5.38 -- vegetables -- Voli
+Zelene masline 100 g vakum Elia-Elia (155012) -- 12.90 -- dried fruits -- Voli
+Zelene masline sa origanom vakum 100 g Elia-Elia (155013) -- 12.90 -- dried fruits -- Voli
+Kalamata masline 100 g vakum Elia Elia (155014) -- 12.90 -- vegetables -- Voli
+Koktel Maslina 100 g vakum Elia-Elia (155015) -- 12.90 -- vegetables -- Voli
+Sušena crna maslina u ulju 200 g Elia-Elia (165407) -- 10.95 -- vegetables -- Voli
+Ribella hummus namaz 200 g natural (106985) -- 9.75 -- melted cheese -- Voli
+Ribella hummus namaz 80 g Natural (106986) -- 12.38 -- melted cheese -- Voli
+Ribella hummus namaz 80 g sjemenke bundeve (106989) -- 12.38 -- melted cheese -- Voli
+Ribella hummus namaz 200 g sjemenke bundeve (106990) -- 9.75 -- melted cheese -- Voli
+Hummus namaz klasik 95 g Carnex (170483) -- 13.16 -- melted cheese -- Voli
+Hummus namaz ajvar 95 g Carnex (170484) -- 13.16 -- melted cheese -- Voli
+Hummus namaz bundeva 95 g Carnex (170485) -- 13.16 -- melted cheese -- Voli
+Ananas kolutovi 820 ml Mikado konzerva (11057) -- 5.11 -- fruits -- Voli
+Ananas kolutovi 565 g Mikado (11058) -- 5.58 -- fruits -- Voli
+Ananas kocka 850 ml Mikado (11059) -- 4.81 -- fruits -- Voli
+Ananas kocka 580 ml Mikado (11060) -- 4.81 -- fruits -- Voli
+Tropski mix 227 g Del Monte (171491) -- 7.89 -- vegetables -- Voli
+Breskva komadi 227 g Del Monte (171493) -- 7.00 -- vegetables -- Voli
+Zlatni ananas 227 g Del Monte (171494) -- 7.44 -- fruits -- Voli
+Mlijeko 2.8%mm 1 l Zbregov (195) -- 0.99 -- milk -- Voli
+Mlijeko 3.5%mm 1 l Zbregov (199) -- 1.65 -- milk -- Voli
+Mlijeko kravica 2.8% 1 l sa čepom Imlek (1690) -- 1.55 -- milk -- Voli
+Moja kravica mlijeko D3 vitamin 1 l Imlek (1695) -- 1.65 -- milk -- Voli
+Mlijeko za kafu 10 kom 100 g Zott (18488) -- 5.90 -- milk -- Voli
+Mlijeko kravica 2.8% m.m. 1 l bez čepa Imlek (64009) -- 1.49 -- milk -- Voli
+Kozje mlijeko 2.8% mm 1 l Zbregov (66488) -- 2.25 -- milk -- Voli
+Mlijeko kravica 1.5 % bez laktoze 1 l Imlek (76711) -- 1.75 -- milk -- Voli
+Mlijeko Natura 2.8% uht 1 l mi99 (92913) -- 0.99 -- milk -- Voli
+Mlijeko Natura 3.2% mm uht 1 l MI99 (95110) -- 1.35 -- milk -- Voli
+Moja kravica 2.8% dugotrajno mlijeko 1.5 l Imlek (109038) -- 1.46 -- milk -- Voli
+Jogurt balans + 1 l Imlek (12106) -- 1.69 -- jogurt -- Voli
+Jogurt balans + 0.5 l Imlek (12107) -- 1.98 -- jogurt -- Voli
+Jogurt balans + 0.25 l Imlek (12108) -- 2.76 -- jogurt -- Voli
+Jogurt 1kg  3.2% Srna (19134) -- 1.35 -- jogurt -- Voli
+Jogurt čaša 180 ml 2.8% mm Srna (19137) -- 1.61 -- jogurt -- Voli
+Jogurt 1 kg 3.4% m.m. Lazine (19144) -- 1.45 -- jogurt -- Voli
+Kiselo mlijeko 2.8% 180 ml čaša Imlek (63953) -- 1.94 -- milk -- Voli
+Moja kravica jogurt sa 2.8% mm 1 l Imlek (62332) -- 1.59 -- jogurt -- Voli
+Jogurt kravica 2.8% mm 0.25 l Imlek (62334) -- 2.76 -- jogurt -- Voli
+Jogurt od kozjeg mlijeka 2.8% mm 0,5 l Kozari (77805) -- 3.78 -- jogurt -- Voli
+Jogurt Kravica 2.8% mm 1.45 kg pet Imlek (100811) -- 1.44 -- jogurt -- Voli
+Balans + 1.45 l Imlek (105680) -- 1.48 -- jogurt -- Voli
+Jogurt vilikis grčki natur 150 g Vindija (115131) -- 4.67 -- jogurt -- Voli
+Kefir 3.5% mm 1 l Zbregov (120876) -- 1.99 -- jogurt -- Voli
+Kefir 3.5% mliječne masti 330 ml Zbregov (128718) -- 2.73 -- jogurt -- Voli
+Kisjelo mlijeko 750 ml Milk Company (135123) -- 1.67 -- jogurt -- Voli
+Moja kravica gusti jogurt 2.8% mm 900 g Imlek (136964) -- 1.66 -- jogurt -- Voli
+Moja kravica gusti jogurt 2.8% 1.45 l Imlek (136965) -- 1.37 -- jogurt -- Voli
+Jogurt 3.4% mm 1.5 kg Lazine (138085) -- 1.33 -- jogurt -- Voli
+Jogurt 2.8% mm 1.5 kg Lazine (138088) -- 1.33 -- jogurt -- Voli
+Jogurt Natura 2.8 % mm 1.5 l MI99 (144058) -- 0.97 -- jogurt -- Voli
+Proteinski napitak jagoda 0.5 l Zbregov (160151) -- 4.98 -- jogurt -- Voli
+Proteinski napitak vanilija 0.5 l Zbregov (160152) -- 4.98 -- jogurt -- Voli
+Proteinski napitak čokolada i banana 0.5 l Zbregov (160153) -- 4.98 -- jogurt -- Voli
+Kisjelo mlijeko 3.2% mm 680 g tegla Srna (163754) -- 1.84 -- jogurt -- Voli
+Protein SKYR jogurt šumsko voće 200 g Zbregov (169659) -- 7.25 -- jogurt -- Voli
+Balans + Imuno 1 l TT Imlek (173920) -- 1.69 -- jogurt -- Voli
+Proteinski napitak kokos 0.5 l Zbregov (176746) -- 5.38 -- jogurt -- Voli
+Proteinski napitak čokolada 0.5 l Zbregov (176747) -- 5.38 -- jogurt -- Voli
+Proteinski napitak keks 0.5 l Zbregov (176748) -- 5.38 -- jogurt -- Voli
+Proteinski napitak čokoladni kikiriki maslac 0.5 l Zbregov (176749) -- 5.38 -- jogurt -- Voli
+Proteinski napitak pistaćija 0.5 l  Zbregov (183722) -- 4.98 -- jogurt -- Voli
+Vrhnje za kuvanje 0.5 L Zbregov (251) -- 5.18 -- maslac -- Voli
+Vrhnje za kuvanje 0.2 L Zbregov (252) -- 6.75 -- maslac -- Voli
+Pavlaka Kravica 20% 0.7 l čaša Imlek (12129) -- 3.56 -- milk -- Voli
+Pavlaka za kuvanje 500 g Dukat (16923) -- 6.58 -- vegetables -- Voli
+Pavlaka za kuvanje 200 g Dukat (16956) -- 7.25 -- vegetables -- Voli
+Kisjela pavlaka 500 g Srna (19139) -- 2.78 -- vegetables -- Voli
+Hulala biljna pavlaka 1l Codap (19167) -- 4.15 -- vegetables -- Voli
+Gran cucina biljna pavlaka condire 1 l Codap (19181) -- 3.99 -- semi-finished products -- Voli
+Kisjela pavlaka 20% m.m. Moja Kravica čaša 180 g (23472) -- 4.17 -- milk -- Voli
+Pavlaka Kravica 400 g 20% Imlek (52752) -- 3.62 -- milk -- Voli
+Krem za kuvanje 500 ml Polimark (108312) -- 3.70 -- vegetables -- Voli
+Čokoladno mlijeko 1 l Zbregov (205) -- 2.15 -- milk -- Voli
+Moja kravica čokoladno mlijeko 250 ml  Imlek (1696) -- 2.76 -- milk -- Voli
+Čokoladno mlijeko Moja Kravica 1 l Imlek (1698) -- 2.09 -- milk -- Voli
+Puding vanilija 125 g Vindija (172) -- 4.40 -- vegetables -- Voli
+Puding čoklolada 125 g Vindija (173) -- 4.40 -- vegetables -- Voli
+Puding lješnik-čoklolada 125 g Vindija (174) -- 5.20 -- vegetables -- Voli
+Freska tek voćni jogurt jagoda vanila 500 ml Vindija (232) -- 2.70 -- jogurt -- Voli
+Jogobela classic više ukusa 150 g Zott (18482) -- 4.60 -- vegetables -- Voli
+Jogobela light više ukusa 150 g Zott (18483) -- 4.60 -- vegetables -- Voli
+Monte dječiji obrok čokolada 55 g (18486) -- 10.73 -- vegetables -- Voli
+Monte drink 200 g Zott (18489) -- 5.45 -- vegetables -- Voli
+Desert sa šlag-čokolada 175 g Zott (18490) -- 3.71 -- vegetables -- Voli
+Desert sa šlag vanila 175 g Zott (18492) -- 3.71 -- vegetables -- Voli
+Kinder Pingui 30 g Ferrero (48563) -- 26.33 -- vegetables -- Voli
+Monte maxi dječji obrok vanila čokolada 100 g Zott (58083) -- 9.90 -- hard cheese -- Voli
+Monte drink 4X95 g Zott (58518) -- 19.47 -- vegetables -- Voli
+Puding vanila sa šlagom 4x125 g Vindija (91520) -- 15.12 -- vegetables -- Voli
+Puding čokolada sa šlagom 4x125 g Vindija (91521) -- 15.12 -- vegetables -- Voli
+Choco Loco mliječni puding 4x125 g Vindija (99113) -- 15.92 -- vegetables -- Voli
+Zottis puding sa ukusom čokolade 115 g Zott (100829) -- 4.26 -- vegetables -- Voli
+Zottis fruit voćni jogurt 150 g Zott (103059) -- 3.93 -- jogurt -- Voli
+Zottis fruit voćni jogurt 115 g Zott (103060) -- 3.91 -- jogurt -- Voli
+Zottis dessert puding vanila 115 g Zott (103578) -- 4.26 -- vegetables -- Voli
+Monte schoko snack 29 g Zott (116267) -- 22.41 -- vegetables -- Voli
+Freska voćni jogurt malina-kupina 330 g Vindija (123661) -- 3.00 -- jogurt -- Voli
+Freska voćni jogurt vanila 330 ml Vindija (123663) -- 3.00 -- jogurt -- Voli
+Zottis Creamy jagoda 115 g Zott (133123) -- 4.26 -- vegetables -- Voli
+Freska voćni jogurt mix 150 ml Vindija (138882) -- 4.33 -- jogurt -- Voli
+Jogobela voćni jogurt bez šećera više ukusa 150 g Zott (139029) -- 5.00 -- jogurt -- Voli
+Monte Snack 4X29 g Zott (150300) -- 63.79 -- vegetables -- Voli
+Choco Coco mliječni puding 4x125 g Vindija (151205) -- 15.92 -- vegetables -- Voli
+Protein puding vanila 180 g Zbregov (173827) -- 8.06 -- jogurt -- Voli
+Protein puding čokolada 180 g Zbregov (173828) -- 8.06 -- jogurt -- Voli
+Protein puding kokos-badem 180 g Zbregov (179696) -- 8.06 -- jogurt -- Voli
+Prijatno mliječni margarin 250 g Vital (488) -- 6.36 -- maslac -- Voli
+Stoni margarin 250 g Vital (491) -- 3.96 -- maslac -- Voli
+Laki margarin 255 g Vital (497) -- 3.88 -- maslac -- Voli
+Dobro jutro mliječni margarin 250 g Dijamant (7956) -- 4.76 -- maslac -- Voli
+Dobro jutro mliječni margarin 500 g Dijamant (7957) -- 4.38 -- maslac -- Voli
+Margarin Dobro jutro dijet 250 g Dijamant (7958) -- 4.20 -- maslac -- Voli
+Maslac 125 g Imlek (12161) -- 22.80 -- maslac -- Voli
+Maslac 10 g Zbregov (92810) -- 25.00 -- maslac -- Voli
+Maslac 125 g Zbregov (92811) -- 19.92 -- maslac -- Voli
+Maslac 250 g Zbregov (92812) -- 17.96 -- maslac -- Voli
+Maslac 200 g Imlek (132802) -- 21.45 -- maslac -- Voli
+Maslac 10 g Markenbutter (136993) -- 18.00 -- maslac -- Voli
+Namaz 10 g Bitterich (160416) -- 10.00 -- melted cheese -- Voli
+Majovita boca 450 ml Vital (510) -- 6.64 -- maslac -- Voli
+Majonez delikates 500 ml Polimark (1656) -- 5.30 -- semi-finished products -- Voli
+Majonez delikates 80 g Thomy (10096) -- 11.88 -- semi-finished products -- Voli
+Majonez delikates tuba 85 g Thomy (10097) -- 20.59 -- semi-finished products -- Voli
+Majonez delikates tuba 165 g Thomy (10098) -- 17.27 -- semi-finished products -- Voli
+Majonez delikates tegla 650 ml Thomy (10100) -- 7.31 -- semi-finished products -- Voli
+Majonez delikastes dojpak 280 ml Polimark (23504) -- 6.25 -- vegetables -- Voli
+Tartar sos 300 ml Polimark (53652) -- 4.83 -- vegetables -- Voli
+Majovita light dojpak 270 g Vital (71446) -- 5.00 -- maslac -- Voli
+Majovita delikates dojpak 270 ml Vital (71447) -- 6.63 -- semi-finished products -- Voli
+Senf fini 100 g Polimark (73830) -- 4.90 -- vegetables -- Voli
+Majonez delikates 470 g Dobro (95707) -- 4.45 -- semi-finished products -- Voli
+Majonez dojpak 280 ml Thomy (132252) -- 8.75 -- vegetables -- Voli
+Senf doypack 280 g Centroproizvod (136059) -- 5.54 -- vegetables -- Voli
+Majonez dojpak 380 g Thomy (143102) -- 7.87 -- vegetables -- Voli
+Majonez delight doypak 220 g Thomy (146435) -- 8.59 -- vegetables -- Voli
+Trapist I klasa 1/4 Mljekara Livno 1kg  (17080) -- 12.99 -- hard cheese -- Voli
+Edamer sir 40% mm Mljekara Livno 100g  (17083) -- 6.50 -- hard cheese -- Voli
+Gauda sir 45% mm Mljekara Livno 100g  (17084) -- 6.50 -- hard cheese -- Voli
+Sir Edamer 40% mm Bayernland 100g  (23072) -- 6.00 -- hard cheese -- Voli
+Sir Gauda 48% mm Bayernland 100g  (23074) -- 6.00 -- hard cheese -- Voli
+Maasdam sir 45% mm Daily Dairy 100g  (129278) -- 15.50 -- hard cheese -- Voli
+Maasdam sir 45% mm narezani 140 g Daily Dairy (129280) -- 19.93 -- hard cheese -- Voli
+Sir Ementaler 200 g Zott (133784) -- 15.45 -- hard cheese -- Voli
+V.S.O.C. gauda 48% mm gold 190 g Daily Dairy (171745) -- 31.53 -- hard cheese -- Voli
+Svježi sir u sirnoj marami 800 g Vindija (284) -- 9.99 -- hard cheese -- Voli
+Zlatarski punomasni sir Viskom 100g  (1902) -- 7.00 -- hard cheese -- Voli
+Mediterano meki sir 45 % 450 g Šabačka mljekara (8011) -- 11.31 -- hard cheese -- Voli
+Mediterano meki sir 45 % 250 g Šabačka mljekara (8012) -- 12.36 -- hard cheese -- Voli
+Somborska 45 % mm 250 g Somboled (19688) -- 12.36 -- vegetables -- Voli
+Njeguški domaći sir Milošević 100g  (19721) -- 14.00 -- hard cheese -- Voli
+Mladi sir 250 g President (21809) -- 9.16 -- hard cheese -- Voli
+Čevski sir sirara Vulaš 100g  (99851) -- 13.00 -- hard cheese -- Voli
+Feta sir kocke 150 g u salamuri Dodoni (140657) -- 30.60 -- hard cheese -- Voli
+Pljevaljski stari sir Vujanović 100g  (163699) -- 7.30 -- hard cheese -- Voli
+Sirni namaz 200 g Zbregov (286) -- 10.45 -- melted cheese -- Voli
+ABC sir za mazanje 200 g Belje (7241) -- 11.45 -- hard cheese -- Voli
+ABC sir za mazanje 100 g Belje (7242) -- 12.90 -- hard cheese -- Voli
+Pljevaljski kajmak 200 g RM Komerc (7462) -- 17.75 -- vegetables -- Voli
+Sirko 60% 100 g Šabačka mljekara (8006) -- 12.10 -- hard cheese -- Voli
+Ala kamak 70% 250 g Šabačka mljekara (8008) -- 11.96 -- hard cheese -- Voli
+Kajmak rinfuz domaći Viskom 100g  (22213) -- 13.00 -- vegetables -- Voli
+Sirni namaz light 200 g Zbregov (59212) -- 10.45 -- melted cheese -- Voli
+Mladi kajmak 250 g President (106167) -- 18.76 -- semi-finished products -- Voli
+Sirni namaz urnebes Sirko 55% 150 g Šabačka mljekara (153069) -- 11.27 -- melted cheese -- Voli
+Mladi kajmak 100 g Dukat (166556) -- 22.90 -- semi-finished products -- Voli
+Camembert 250 g sir Vindija (265) -- 25.40 -- hard cheese -- Voli
+Caprilo 100 g sir Vindija (266) -- 28.90 -- hard cheese -- Voli
+Bovi blue 100 g sir Vindija (271) -- 21.90 -- hard cheese -- Voli
+Paladin plemeniti plavi sir blok 50% mm 100g  (17126) -- 19.50 -- hard cheese -- Voli
+Parmezan 40 g kesa Zanetti (17243) -- 28.75 -- vegetables -- Voli
+Grana Padano DOP rendani 60 g Ambrosi (130264) -- 26.50 -- hard cheese -- Voli
+Grana Padano DOP 200 g Ambrosi (130267) -- 24.95 -- hard cheese -- Voli
+Gorgonzola Piccante DOP 150 g Ambrosi (130275) -- 23.93 -- hard cheese -- Voli
+Parmigiano Reggiano DOP 150 g Ambrosi (134965) -- 39.93 -- hard cheese -- Voli
+Gorgonzola bio DOP 170 g Ambrosi (134969) -- 29.35 -- hard cheese -- Voli
+Maskarpone svježi sir 500 g Vindija (283) -- 18.18 -- hard cheese -- Voli
+Mozzarella Ciliegine 250 g Monte Bianco (79072) -- 15.96 -- vegetables -- Voli
+Scamorza affumato 250 g Ambrosi (131661) -- 15.96 -- hard cheese -- Voli
+Kerniger zrnasti sir 200 g Bayernland (150966) -- 7.75 -- hard cheese -- Voli
+Mozzarella Pizzotella 250 g Monte Bianco (155089) -- 14.60 -- vegetables -- Voli
+Zelene doline šmarski rok sir 25% mm 100g  (22000) -- 9.00 -- hard cheese -- Voli
+Planinski dimljeni polutvrdi sir Monte Bianco 100g  (88657) -- 15.30 -- hard cheese -- Voli
+Dublin dairy white cheddar 140 g Daily Dairy (129273) -- 21.36 -- hard cheese -- Voli
+Provolone Valpadana DOP dolce 250 g Ambrosi (130269) -- 18.36 -- hard cheese -- Voli
+Provolone Valpadana DOP dolce 5-6 kg pancetta Ambrosi 100g  (130270) -- 266.67 -- hard cheese -- Voli
+Provolone Valpadana DOP piccante 5-6kg pancetta Ambrosi 100g  (130271) -- 283.33 -- hard cheese -- Voli
+Provolone Valpadana DOP piccante 250 g Ambrosi (130276) -- 18.36 -- hard cheese -- Voli
+Cheddar white Daily Dairy 100g  (134352) -- 16.00 -- hard cheese -- Voli
+Cheddar crveni Daily Dairy 100g  (134353) -- 16.00 -- hard cheese -- Voli
+Livanjski sir 180 g Mljekara Livno (147581) -- 18.61 -- hard cheese -- Voli
+Bijeli kozji sir u kriškama deluxe kutija 200 g Kozari (77801) -- 23.95 -- hard cheese -- Voli
+Koziji sir 50% mm Daily Dairy 100g  (129292) -- 23.00 -- hard cheese -- Voli
+Kozji mladi sir 50% mm 300 g Daily Dairy (129294) -- 29.30 -- hard cheese -- Voli
+Pecorino Romano 200 g Ambrosi (130268) -- 37.45 -- hard cheese -- Voli
+Pecorino Romano rendani 100 g Ambrosi (134967) -- 39.90 -- hard cheese -- Voli
+Koziji mladi sir narezani 50% mm 140 g Daily Dairy (150557) -- 29.21 -- hard cheese -- Voli
+Ricotta 250 g Ambrosi (159898) -- 7.16 -- hard cheese -- Voli
+Meki kozji sir 250 g Lider (164136) -- 17.96 -- hard cheese -- Voli
+Sir topljeni 140 g specijal Zdenka (6058) -- 17.79 -- melted cheese -- Voli
+Sir Zdenka 140 g 35% mliječne masti classic (6059) -- 17.79 -- melted cheese -- Voli
+Toasty sandwich 150 g Zott (17299) -- 11.27 -- melted cheese -- Voli
+Toasty toast 150 g Zott (17301) -- 11.27 -- melted cheese -- Voli
+Zdenka natura topljeni sir za mazanje 150 g čaša (144790) -- 17.93 -- melted cheese -- Voli
+Dimljeni sir polovina Karunjanka 100g  (124702) -- 16.90 -- hard cheese -- Voli
+Dimljeni sir 45% mm natural Daily Dairy 100g  (129288) -- 11.00 -- hard cheese -- Voli
+Sir urda alternativa 400 g vakum Olpa (86149) -- 6.62 -- hard cheese -- Voli
+Violife ukus gaude slajs 140 g (185643) -- 19.93 -- semi-finished products -- Voli
+Violife ukus mozzarella rendani 200 g (185646) -- 17.45 -- vegetables -- Voli
+Violife grčki bijeli komad 200 g (185648) -- 16.95 -- fruits -- Voli
+Violife ukus cheddar slajs 140 g (185649) -- 19.93 -- semi-finished products -- Voli
+Svježi bijeli rezani hljeb Pan Carre 285 g Barilla (9123) -- 4.74 -- toast and packaged bread -- Voli
+Fette biscott. Armonia di cereali 315 g Mulino Bianco (9124) -- 10.00 -- toast and packaged bread -- Voli
+Fette biscott. Dorate 315 g dvopek Mulino Bianco (9125) -- 9.05 -- toast and packaged bread -- Voli
+Fette biscott. Integrale 315 g dvopek Mulino Bianco (9126) -- 9.05 -- toast and packaged bread -- Voli
+Pan Bauletto Bianco 400 g  Mulino Bianco Barilla (78155) -- 4.72 -- toast and packaged bread -- Voli
+Pan bauletto integrale 400 g Barilla (78156) -- 4.72 -- toast and packaged bread -- Voli
+Pan Bauletto hljeb 5 vrsta žitarica i soja 400 g Mulino Bianco Barilla (91612) -- 5.62 -- toast and packaged bread -- Voli
+Pan Carre Fioco 430 g  Mulino Bianco Barilla (103473) -- 3.93 -- toast and packaged bread -- Voli
+Pan Carre integrale 315 g Mulino Bianco Barilla (147763) -- 5.87 -- toast and packaged bread -- Voli
+Tost hljeb classic 500 g Tvojih 5 Minuta (154350) -- 3.38 -- toast and packaged bread -- Voli
+Tost hljeb sa buterom 500 g Tvojih 5 Minuta (154351) -- 4.38 -- toast and packaged bread -- Voli
+Tost sa sjemenkama 500 g Tvojih 5 minuta (154352) -- 3.78 -- toast and packaged bread -- Voli
+Tost hljeb maxi classic 750 g Tvojih 5 Minuta (154353) -- 3.45 -- toast and packaged bread -- Voli
+Kore za pitu i gibanicu 500 g MP Market (74435) -- 2.98 -- vegetables -- Voli
+Granpiada con olio extravergine 330 g Roberto (86144) -- 5.12 -- vegetables -- Voli
+Tortilje 240 g Roberto (86145) -- 8.12 -- vegetables -- Voli
+Pšenična tortilja 400 g Tortil Love (173885) -- 5.98 -- vegetables -- Voli
+Pšenična tortilja 240 g Tortil Love (173887) -- 5.63 -- vegetables -- Voli
+Bajadera 450g Slatko srce (129665) -- 10.00 -- cakes and pastries -- Voli
+Francuski makaronsi 24 kom 288g Chateau Blanc (180375) -- 14.90 -- cakes and pastries -- Voli
+Hljeb bijeli 500 g (139000) -- 1.60 -- bread -- Voli
+Prezla 200 g Dobro (95754) -- 2.75 -- dried fruits -- Voli
