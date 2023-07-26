@@ -2,9 +2,33 @@ from flask import Blueprint
 
 from dao.CRUD import *
 from scraping import glovo_scraper
+from scraping.test_scrap_6 import scraping_6
 
 # Создаем Blueprint, чтобы определить маршруты
 scraping_bp = Blueprint('scraping_routes', __name__)
+
+
+@scraping_bp.route('/test-scrap-6')
+def scrap_6():
+    urls_6_markets = {
+        'Aroma':
+            "https://glovoapp.com/me/en/podgorica/aroma-cetinjska-pdg/",
+        'Franca':
+            "https://glovoapp.com/me/en/podgorica/franca-supermarket/",
+        'Voli':
+            "https://glovoapp.com/me/en/podgorica/voli1/",
+        'IDEA':
+            "https://glovoapp.com/me/en/podgorica/idea-podgorica/",
+        'C_market':
+            "https://glovoapp.com/me/en/podgorica/c-market/",
+        'City_Market':
+            "https://glovoapp.com/me/en/podgorica/city-marketpdg/"
+    }
+    markets_6 = [
+        'Aroma', 'Franca', 'Voli',
+        'IDEA', 'C_market', 'City_Market'
+    ]
+    return scraping_6(markets_6, urls_6_markets, 0)
 
 
 @scraping_bp.route('/scraping')
