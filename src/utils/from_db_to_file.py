@@ -1,6 +1,6 @@
 import csv
 
-from dao.CRUD import get_database_glovo
+from dao.CRUD import get_database_glovo, get_database
 
 list_of_errors = list()
 list_to_write = list()
@@ -125,4 +125,18 @@ def to_file_for_UX():
             file.write(data)
 
 
-to_file_for_UX()
+def from_6_to_file():
+    db = get_database()
+    coll = db["test6"]
+    cursor = coll.find()
+
+    with open("9066.csv", mode="w", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        for doc in cursor:
+            product_id = doc["_id"]
+            product_name = doc["product"]["name"]
+            data = [str(product_id), str(product_name)]
+            writer.writerow(data)
+
+
+from_6_to_file()

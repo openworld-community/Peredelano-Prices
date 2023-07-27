@@ -8,7 +8,7 @@ from scraping.test_scrap_6 import scraping_6
 scraping_bp = Blueprint('scraping_routes', __name__)
 
 
-@scraping_bp.route('/test-scrap-6')
+@scraping_bp.route('/scrap-6')
 def scrap_6():
     urls_6_markets = {
         'Aroma':
