@@ -5,6 +5,7 @@ from bson import ObjectId
 from pymongo import MongoClient
 
 from utils.for_imgs import fs
+from utils.utc_and_local_time import get_utc_time
 
 
 def get_database():
@@ -139,12 +140,26 @@ def get_top_5_in_group():
 
 # to do func for update
 # to do date of price
-# to do new db and collection, add field image_name
+# to do field image_name
+
+
+def update_price_by_name(collection, name, price):
+    current_time = str(get_utc_time())
+    new_update = [current_time, price]
+    collection.update_one(
+        {"product.name": name},
+        {'$set': {"product.price": price}},
+    )
+    collection.update_one(
+        {"product.name": name},
+        {'$push': {"all_updates": new_update}}
+    )
+
+
 
 #   #   #   #   ##   #   #   #   ##   #   #   #   ##   #   #   #   #
 
 # collection of all products with full info for prod
-# some products haven't weight or img - f*ck them
 
 
 glovodb = get_database_glovo()
