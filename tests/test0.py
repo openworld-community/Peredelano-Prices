@@ -1,10 +1,24 @@
-from classification.peredelano_classifier_v0 import pp_classifier
-from dao.add_new_fields_to_docs import add_weight_field
-from utils.calculations import replace_comma_with_dot
+import datetime
+import pytz
 
+from dao.CRUD import get_database, update_price_by_name
 
-with open("file.txt", "w") as file:
-    result = pp_classifier("Francuski makaronsi 24 kom 288g Chateau")
-    file.write(str(result[0]))
+db = get_database()
+test_coll = db['testcoll']
+
+# test_item = {
+#     "_id": 1,
+#     "product": {
+#         "name": "B&J strawberry cheesecake 465ml",
+#         "price": [
+#             "7,00",
+#             "€"
+#         ]
+#     },
+#     "market": "Aroma"
+# }
+# test_coll.insert_one(test_item)
+
+update_price_by_name(test_coll, "B&J strawberry cheesecake 465ml", "9.00")
 
 
